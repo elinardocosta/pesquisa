@@ -7,6 +7,7 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 h1 {
@@ -32,7 +33,7 @@ button {
 }
 
 button {
-    background-color: #0074D9;
+    background-color: #4aa7f8;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -40,7 +41,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #4c9aed;
 }
 
 #results {
@@ -49,6 +50,8 @@ button:hover {
     padding: 10px;
     border-radius: 5px;
     background-color: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+    display: flex;
 }
 
 input[type="file" i] {
@@ -68,16 +71,55 @@ input[type="file" i] {
 
 /* styles.css */
 
-.hidden {
-    display: none;
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .footer {
     text-align: center;
-    background-color: #0056b3;
+    background-color: #509ff4;
     color: #fff;
     padding: 2px;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav {
+    background-color: #509bec;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin: 10px;
+}
+
+button {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
