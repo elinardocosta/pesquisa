@@ -4,15 +4,16 @@ function searchCodes() {
 
     const selectedFile = fileInput.files[0];
     const codesList = [
-        "8087539",
-        "9233521",
-        "8285187",
-        "7971427",
-        "8398542",
-        "8029482",
-        "8791210",
-        "8821186",
-        "8259640",
+        "8087539",//HEROS RODRIGUES DE MORAIS
+        "9233521",//ADRIANO ANTUNES DE SALVES
+        "8285187",//ALESSANDRA RAYMUNDO
+        "7971427",//ALESSANDRA SERICAWA BROCCO SILVA
+        "8398542",//AMANDA ALVES DOS SANTOS PEDRO
+        "8029482",//ANA LUCIA CARVALHO
+        "8791210",//ANA PAULA RODRIGUES HONORIO
+        "8063494",//ANA PAULA VIANA COSTA
+        "8821186",//ANGELA MARIA DE OLIVEIRA
+        "8259640",//
         "8171831",
         "8171831",
         "8421790",
