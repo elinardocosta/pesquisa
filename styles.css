@@ -42,7 +42,7 @@ button:hover {
 
 #results {
     margin-top: 20px;
-    border: 1px solid #aaaaaa;
+    border: 1px solid #959393;
     padding: 10px;
     border-radius: 5px;
     background-color: #f5f5f5;
@@ -78,6 +78,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-color: #dedede;
 }
 
 header {
