@@ -62,8 +62,6 @@ input[type="file" i] {
     overflow: hidden !important;
 }
 
-/* styles.css */
-
 @media (max-width: 768px) {
     nav {
         display: flex;
@@ -96,10 +94,15 @@ header {
     padding: 10px;
 }
 
-nav {
+nav {   
+    text-align: center;
     background-color: #0074d9;
+    color: #fff;
     text-align: center;
     padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 nav a {
