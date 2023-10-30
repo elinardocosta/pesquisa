@@ -1,5 +1,4 @@
 /* styles.css */
-
 .container {
     max-width: 700px;
     margin: 0 auto;
@@ -9,16 +8,22 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.page-content {
+    display: flex;
+    /* Tornar o conteúdo flexível */
+    flex-direction: column;
+    /* Alinhar os elementos verticalmente */
+}
+
 h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 label {
     font-weight: bold;
     color: #555;
-    display: block;
     margin-bottom: 5px;
 }
 
@@ -31,14 +36,13 @@ button {
     border-radius: 5px;
 }
 
-
 button:hover {
     background-color: #2d8ef5;
 }
 
 #results {
     margin-top: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #aaaaaa;
     padding: 10px;
     border-radius: 5px;
     background-color: #f5f5f5;
@@ -62,7 +66,6 @@ input[type="file" i] {
 }
 
 /* styles.css */
-
 @media (max-width: 768px) {
     nav {
         display: flex;
@@ -81,13 +84,13 @@ header {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
 }
 
 nav {
     background-color: #0074d9;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
 }
 
 nav a {
@@ -104,6 +107,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
 
 .footer {
     text-align: center;
