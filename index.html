@@ -14,19 +14,29 @@
 
 </head>
 
+
+<nav>
+    <a href="#">Página Inicial</a>
+    <!-- <a href="#">Sobre Nós</a>
+   // <a href="#">Serviços</a>
+    //<a href="#">Contato</a> -->
+</nav>
+
+
 <body>
     <div class="container">
         <h1>Busca de RF em D.O</h1><br>
-        <label for="fileInput">Selecionar o Arquivo PDF da Ediçao baixada</label>
+        <label for="fileInput">Selecionar o Arquivo PDF da Ediçao baixado</label>
         <input type="file" id="fileInput" accept=".pdf"><br><br>
         <button onclick="searchCodes()">Buscar RFs no Diário Oficial</button><br><br>
         <div id="results"></div><br><br>
-    </div>
 
-<div class="footer">
+    </div>
+    <div class="footer">
         <p>&copy; 2023. EMEF Maria Aparecida do Nascimento</p>
     </div>
-    
+
+    </div>
     <script src="pdf.js"></script>
     <script src="script.js"></script>
 </body>
