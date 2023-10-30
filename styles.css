@@ -32,16 +32,9 @@ button {
     border-radius: 5px;
 }
 
-button {
-    background-color: #4aa7f8;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 button:hover {
-    background-color: #4c9aed;
+    background-color: #2d8ef5;
 }
 
 #results {
@@ -81,7 +74,7 @@ input[type="file" i] {
 
 .footer {
     text-align: center;
-    background-color: #509ff4;
+    background-color: #0074d9;
     color: #fff;
     padding: 2px;
     position: fixed;
@@ -104,7 +97,7 @@ header {
 }
 
 nav {
-    background-color: #509bec;
+    background-color: #0074d9;
     text-align: center;
     padding: 10px;
 }
