@@ -1,0 +1,30 @@
+<!-- <script src="build/pdf.js"></script>   <script src="build/pdf.worker.js"></script>   -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Busca de RF em D.O</title>
+
+    <script src="build/pdf.js"></script>
+    <script src="build/pdf.worker.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Busca de RF em D.O</h1><br>
+        <label for="fileInput">Selecionar oArquivo PDF da Ediçao baixado</label>
+        <input type="file" id="fileInput" accept=".pdf">
+        <button onclick="searchCodes()">Buscar RFs no Diário Oficial</button><br><br>
+        <div id="results"></div><br><br>
+
+    </div>
+    <script src="pdf.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
