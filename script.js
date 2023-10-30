@@ -112,7 +112,7 @@ function searchCodes() {
                     }
 
                     // Exibe os resultados
-                    resultsDiv.innerHTML = "RF e Linhas encontradas no Diário Oficial:" + "<br><br>";
+                    resultsDiv.innerHTML = "Busca Concluida... <br><br>" + " RF e Linhas encontradas no Diário Oficial: <br><br>";
                     for (const code of codesList) {
                         const lines = codeToLineMap[code];
                         if (lines.length > 0) {
