@@ -71,3 +71,13 @@ input[type="file" i] {
 .hidden {
     display: none;
 }
+
+.footer {
+    text-align: center;
+    background-color: #0056b3;
+    color: #fff;
+    padding: 2px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
