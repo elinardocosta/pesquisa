@@ -3,155 +3,78 @@ function searchCodes() {
     const resultsDiv = document.getElementById('results');
 
     const selectedFile = fileInput.files[0];
-    const codesList = [
-        "8087539",//HEROS RODRIGUES DE MORAIS
-        "9233521",//ADRIANO ANTUNES DE SALVES
-        "8285187",//ALESSANDRA RAYMUNDO
-        "7971427",//ALESSANDRA SERICAWA BROCCO SILVA
-        "8398542",//AMANDA ALVES DOS SANTOS PEDRO
-        "8029482",//ANA LUCIA CARVALHO
-        "8791210",//ANA PAULA RODRIGUES HONORIO
-        "8063494",//ANA PAULA VIANA COSTA
-        "8821186",//ANGELA MARIA DE OLIVEIRA
-        "8259640",//
-        "8171831",
-        "8171831",
-        "8421790",
-        "7822529",
-        "8495955",
-        "8279071",
-        "8163481",
-        "8259011",
-        "7736835",
-        "8139539",
-        "8469504",
-        "8500860",
-        "9229787",
-        "9233563",
-        "7106921",
-        "7989946",
-        "6865682",
-        "8471622",
-        "8830649",
-        "9233512",
-        "8815585",
-        "8230901",
-        "8257833",
-        "7871643",
-        "9191364",
-        "9114696",
-        "8840989",
-        "8428930",
-        "9212451",
-        "8964327",
-        "8183031",
-        "8970661",
-        "8031304",
-        "8514631",
-        "9156011",
-        "6789587",
-        "8497036",
-        "7487959",
-        "7514981",
-        "8839131",
-        "7176783",
-        "7590547",
-        "8482985",
-        "8470634",
-        "9239863",
-        "8427071",
-        "8964858",
-        "8456542",
-        "8456054",
-        "7976470",
-        "8251592",
-        "8346178",
-        "8163111",
-        "9145770",
-        "8482616",
-        "8795568",
-        "8821917",
-        "7546823",
-        "8044368",
-        "7919905"
-    ]; // Lista de códigos a serem pesquisados
-
-function searchCodes() {
-    const fileInput = document.getElementById('fileInput');
-    const resultsDiv = document.getElementById('results');
-
-    const selectedFile = fileInput.files[0];
-    const codesList = [
-        "8087539",
-        "9233521",
-        "8285187",
-        "7971427",
-        "8398542",
-        "8029482",
-        "8791210",
-        "8821186",
-        "8259640",
-        "8171831",
-        "8171831",
-        "8421790",
-        "7822529",
-        "8495955",
-        "8279071",
-        "8163481",
-        "8259011",
-        "7736835",
-        "8139539",
-        "8469504",
-        "8500860",
-        "9229787",
-        "9233563",
-        "7106921",
-        "7989946",
-        "6865682",
-        "8471622",
-        "8830649",
-        "9233512",
-        "8815585",
-        "8230901",
-        "8257833",
-        "7871643",
-        "9191364",
-        "9114696",
-        "8840989",
-        "8428930",
-        "9212451",
-        "8964327",
-        "8183031",
-        "8970661",
-        "8031304",
-        "8514631",
-        "9156011",
-        "6789587",
-        "8497036",
-        "7487959",
-        "7514981",
-        "8839131",
-        "7176783",
-        "7590547",
-        "8482985",
-        "8470634",
-        "9239863",
-        "8427071",
-        "8964858",
-        "8456542",
-        "8456054",
-        "7976470",
-        "8251592",
-        "8346178",
-        "8163111",
-        "9145770",
-        "8482616",
-        "8795568",
-        "8821917",
-        "7546823",
-        "8044368",
-        "7919905"
-    ]; // Lista de códigos a serem pesquisados
+    const codesList =[ 
+        // Lista de RF a serem pesquisados
+               "8087539",  //HEROS RODRIGUES DE MORAIS
+               "9233521",  // ADRIANO ANTUNES DE SALVES
+               "8285187",  // ALESSANDRA RAYMUNDO
+               "7971427",  //ALESSANDRA SERICAWA BROCCO SILVA
+               "8398542",  //AMANDA ALVES DOS SANTOS PEDRO
+               "8029482",  //ANA LUCIA CARVALHO
+               "8791210",  //ANA PAULA RODRIGUES HONORIO
+               "8063494",  //ANA PAULA VIANA COSTA
+               "8821186",  //ANGELA MARIA DE OLIVEIRA
+               "8259640",  //APARECIDA VIEIRA DA SILVA
+               "8171831",  //BEATRIZ CAROLINE BISPO DIAS
+               "8421790",  //BEATRIZ NOGUEIRA DE SOUSA
+               "7822529",  //CARLA FERNANDA BARRETO
+               "8495955",  //CAROLINA LIMA ANTUNES
+               "8279071",  //CELIA REGINA LUNA TOPGIAN
+               "8163481",  //CLAUDIA MARIA AMADOR RUSSO
+               "8259011",  //CLAUDINEI DA SILVA CRUZ
+               "7736835",  //CLAUDIO VIEIRA DA SILVA
+               "8139539",  //CRISTINA APARECIDA DA SILVA DE OLIVEIRA
+               "8469504",  //DANIELE DE MELO OLIVEIRA DE CARVALHO
+               "8500860",  //DAVI AUGUSTO DE ARAUJO MACEDO
+               "9229787",  //DEBORA SEGURA PAIXAO
+               "9233563",  //DIRCE MARIA ROSA DE OLIVEIRA
+               "7106921",  //DORVAL DA COSTA TORRES
+               "7989946",  //EDSON LIMA
+               "6865682",  //ELAINE CRISTINA CARDOSO SETRINI
+               "8471622",  //ELDIENE SOARES DE OLIVEIRA
+               "8830649",  //ELINARDO NOGUEIRA COSTA
+               "9233512",  //ELIONAI CRUZ CONCEICAO COELHO
+               "8815585",  //EMERICK RANNYERY CHICOLLI AGUIAR
+               "8230901",  //FABIANA ANDRADE DE LACERDA SILVA
+               "8257833",  //FABIO FERREIRA RAMOS
+               "7871643",  //FERNANDA DIAS DA SILVA
+               "9191364",  //GABRIELA DA SILVA FERREIRA DE LIMA
+               "9114696",  //HANNA TEIXEIRA DIAS
+               "8840989",  //IVONE SIQUEIRA LUIZ
+               "8428930",  //JANAINA STEFANIE ALVARES HUBNER
+               "9212451",  //JULIA AZEREDO DA SILVA
+               "8964327",  //JOELMA DOS SANTOS
+               "8183031",  //JOSE AUGUSTO LOPES DE ALENCAR
+               "8970661",  //KAUANE SILVA SEVERINO
+               "8031304",  //LAERCIO JOSE DE DEUS JUNIOR
+               "8514631",  //LIGIA PERPETUO CAPELO FURUGUEM
+               "9156011",  //LILIANE REGINA LIMA SILVA
+               "6789587",  //LUIZ CARLOS CRISTAN
+               "8497036",  //MARIA APARECIDA PACCA DA SILVA
+               "7487959",  //MARIA DE FATIMA LIMA VIEIRA              
+               "7514981",  //NUBIA VIEIRA DE ARAUJO CERQUEIRA
+               "8839131",  //OLINDA ROBERTO LEANDRO
+               "7176783",  //ORLANDO NUNES DE BRITO
+               "7590547",  //PAULINA APARECIDA ZEFERINO
+               "8482985",  //PAULO SERGIO BRAZ
+               "8470634",  //RAFAEL BELMONTE SILVA
+               "9239863",  //RAFAEL DE MELO FERRAZ
+               "8427071",  //REJANE BORBA SANTIAGO SILVA
+               "8964858",  //RENATA DE ANDRADE ALVES
+               "8456542",  //RONALDO DE OLIVEIRA
+               "8456054",  //ROSANE ALEXANDRE ALVES
+               "7976470",  //ROSANGELA APARECIDA FONSECA
+               "8251592",  //SAMUEL FERNANDES CALDAS
+               "8346178",  //SAMUEL FERREIRA DE CAMPOS
+               "8163111",  //SANDRO RAMOS DOS SANTOS
+               "9145770",  //SARA GOIS NASCIMENTO
+               "8482616", // SUE ELLEN CRISTINA LUZ DE MELO CADETE
+               "8795568", // TIANE MARISE RODRIGUES CHAGAS
+               "8821917",  // TAUANA LOPES NEPONUCENO
+               "7546823",  //VERA LUCIA AYKO TAKARA
+               "8044368",  //VERONICE TAVEIRA DE MELO
+               "7919905",]  // VIVIANE CARVALHO DE OLIVEIRA
+ // ADICIONE OS RF NO FINAL DA LISTA ACIMA
 
     if (selectedFile) {
         const fileReader = new FileReader();
