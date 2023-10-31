@@ -22,8 +22,8 @@ h1 {
 }
 
 label {
-    font-weight: lighter;
-    color: #272727;
+    font-weight: bold;
+    color: #555;
     margin-bottom: 2px;
 }
 
