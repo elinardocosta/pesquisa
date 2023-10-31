@@ -1,3 +1,7 @@
+function ocultarLabel() {
+    var label = document.getElementById("minhaLabel");
+    label.style.display = "none";
+}
 function searchCodes() {
     const fileInput = document.getElementById('fileInput');
     const resultsDiv = document.getElementById('results');
