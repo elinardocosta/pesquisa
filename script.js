@@ -118,13 +118,14 @@ function searchCodes() {
                     }
 
                     // Exibe os resultados
-                    resultsDiv.innerHTML = "Busca Concluída... <br><br>" + "RF e Linhas encontradas no Diário Oficial: <br>--------------------------------------------------------<br>";
+                    resultsDiv.innerHTML = "Busca Concluída... <br><br>" +
+                        "RFs encontradas no Diário Oficial desta Edição <br><br>";
 
                     for (const code of codesList) {
                         const lines = codeToLinesMap[code];
                         if (lines.length > 0) {
-                            // resultsDiv.innerHTML += `RF ${code}:<br><br>`;
-                            resultsDiv.innerHTML += "  - " + lines.join('<br>') + "<br>";
+                            //resultsDiv.innerHTML += `RF:  -  ${code} <br>`;
+                            resultsDiv.innerHTML += "  - " + lines.join() + " <br>";
                         }
                     }
                 });
