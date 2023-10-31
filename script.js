@@ -77,8 +77,6 @@ function searchCodes() {
     // ADICIONE OS RF NO FINAL DA LISTA ACIMA
     // Lista de códigos a serem pesquisados
 
-    
-
     if (selectedFile) {
         const fileReader = new FileReader();
         fileReader.onload = function (e) {
@@ -133,6 +131,3 @@ function searchCodes() {
         resultsDiv.innerHTML = "Selecione o arquivo PDF da Edição." + "<br><br>";
     }
 }    
-
-    
-}
