@@ -1,13 +1,33 @@
+
+
 function ocultarLabel() {
     var label = document.getElementById("minhaLabel");
     label.style.display = "none";
 }
+
+function mostrarBarraDeAguarde() {
+    var loading = document.getElementById("loading");
+    loading.style.display = "block";
+}
+
+function ocultarBarraDeAguarde() {
+    var loading = document.getElementById("loading");
+    loading.style.display = "none";
+}
+
 function searchCodes() {
+    // Chame a função para ocultar a label
+    ocultarLabel();
+
+    // Chame a função para mostrar a barra de aguarde
+    mostrarBarraDeAguarde();
+
     const fileInput = document.getElementById('fileInput');
     const resultsDiv = document.getElementById('results');
 
     const selectedFile = fileInput.files[0];
     const codesList = [
+        // (seu código RF)
         // Lista de RF a serem pesquisados
         "8087539",  //HEROS RODRIGUES DE MORAIS
         "9233521",  // ADRIANO ANTUNES DE SALVES
@@ -124,15 +144,20 @@ function searchCodes() {
                     for (const code of codesList) {
                         const lines = codeToLinesMap[code];
                         if (lines.length > 0) {
-                            resultsDiv.innerHTML += `RF:  -  ${code} <br>`;
-                           // resultsDiv.innerHTML += "  - " + lines.join() + " <br>";
+                            resultsDiv.innerHTML += `RF :     -  ${code} <br>`;
+                            //resultsDiv.innerHTML += "  - " + lines.join() + " <br>";
                         }
                     }
+
+                    // Chame a função para ocultar a barra de aguarde após a busca estar completa
+                    ocultarBarraDeAguarde();
                 });
             });
         };
         fileReader.readAsArrayBuffer(selectedFile);
     } else {
         resultsDiv.innerHTML = "Selecione o arquivo PDF da Edição." + "<br><br>";
+        // Chame a função para ocultar a barra de aguarde em caso de erro
+        ocultarBarraDeAguarde();
     }
-}    
+}
