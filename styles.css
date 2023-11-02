@@ -1,60 +1,85 @@
 /* styles.css */
+
+/* Reset de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+}
+
 .container {
     max-width: 750px;
     margin: 0 auto;
-    padding: 5px;
-    background-color: #f4f6f8;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background-color: #fff;
+    /* Fundo branco para um visual mais leve */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* Sutil sombra */
 }
 
 .page-content {
     display: flex;
-    /* Tornar o conteúdo flexível */
     flex-direction: column;
-    /* Alinhar os elementos verticalmente */
+    align-items: center;
+    /* Alinhar os elementos no centro */
 }
 
 h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    /* Tamanho da fonte aumentado para um visual mais leve */
 }
 
 label {
     font-weight: bold;
     color: #555;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 }
 
 input[type="file"],
 button {
+    font-weight: bold;
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
+    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
+    /* Tamanho da fonte */
+    color: #000;
+    /* Cor do texto dos botões para preto */
 }
 
 button:hover {
-    background-color: #2d8ef5;
+    background-color: #f9df78;
+    /* Amarelo escuro para realce */
 }
 
 #results {
     margin-top: 30px;
-    border: 1px solid #959393;
+    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     background-color: #f5f5f5;
-    border-bottom: 1px solid #ccc;
-    display: flex;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* Sutil sombra */
 }
 
-input[type="file" i] {
+/* Removendo estilos desnecessários para input[type="file"] */
+input[type="file"] {
+    font-weight: bold;
     appearance: none;
     background-color: initial;
-    cursor: default;
-    align-items: baseline;
+    cursor: pointer;
     color: inherit;
     text-overflow: ellipsis;
     white-space-collapse: preserve;
@@ -65,8 +90,7 @@ input[type="file" i] {
     overflow: hidden !important;
 }
 
-
-/* styles.css para mobile*/
+/* styles.css para mobile */
 @media (max-width: 768px) {
     nav {
         display: flex;
@@ -75,65 +99,50 @@ input[type="file" i] {
     }
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f6f6f6;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
+header,
 nav {
-    background-color: #0074d9;
+    background-color: #ffcc00;
+    /* Amarelo escuro */
+    color: #070202;
     text-align: center;
     padding: 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: #0b0808;
     margin: 10px;
 }
 
+/* Estilizando o botão de forma mais consistente */
 button {
-    background-color: #0074d9;
-    color: #fff;
+    background-color: #ffcc00;
+    /* Amarelo escuro */
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    color: #000;
+    /* Cor do texto dos botões para preto */
 }
 
 #loading {
-
     text-align: center;
+    font-size: 48px;
+}
 
-    .loader {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        /* Centraliza o elemento */
-        border: 4px solid rgba(255, 255, 255, 0.3);
-        border-top: 6px solid #3498db;
-        border-radius: 50%;
-        width: 60px;
-        /* Aumento da largura */
-        height: 60px;
-        /* Aumento da altura */
-        animation: spin 1s linear infinite;
-    }
-
-
-
-
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 6px solid #ffcc00;
+    /* Amarelo escuro */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
@@ -146,12 +155,13 @@ button {
     }
 }
 
-
 .footer {
     text-align: center;
-    background-color: #0074d9;
-    color: #fff;
-    padding: 2px;
+    background-color: #ffcc00;
+    /* Amarelo escuro */
+    color: #090000;
+    padding: 10px;
+    /* Aumentei o padding para um visual mais espaçado */
     position: fixed;
     bottom: 0;
     width: 100%;
