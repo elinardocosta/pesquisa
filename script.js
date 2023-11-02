@@ -124,8 +124,8 @@ function searchCodes() {
                     for (const code of codesList) {
                         const lines = codeToLinesMap[code];
                         if (lines.length > 0) {
-                            //resultsDiv.innerHTML += `RF:  -  ${code} <br>`;
-                            resultsDiv.innerHTML += "  - " + lines.join() + " <br>";
+                            resultsDiv.innerHTML += `RF:  -  ${code} <br>`;
+                           // resultsDiv.innerHTML += "  - " + lines.join() + " <br>";
                         }
                     }
                 });
