@@ -22,7 +22,13 @@
         <h1>Busca de RF em D.O</h1><br>
         <label for="fileInput">Selecionar o Arquivo PDF da Ediçao baixado</label>
         <input type="file" id="fileInput" accept=".pdf"><br><br>
-        <button onclick="searchCodes(),ocultarLabel()">Buscar RFs no Diário Oficial</button><br>
+        <button id="meuBotao" onclick="searchCodes(),ocultarLabel()">Buscar RFs no Diário Oficial</button><br>
+
+        <div id="loading" style="display: none;"><br>
+            Aguarde...
+            <div class="loader"></div>
+        </div>
+
         <div id="results"></div><br><br>
 
         <label id="minhaLabel">Obs: Passo a Passo de como utilizar :<br><br>
@@ -33,7 +39,7 @@
         </label>
     </div>
     <div class="footer">
-        <p>&copy; 2023. EMEF Maria Aparecida do Nascimento</p>
+        <p>&copy; 2023 - EMEF Maria Aparecida do Nascimento</p>
     </div>
 
     </div>
