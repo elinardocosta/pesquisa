@@ -101,6 +101,7 @@ input[type="file"] {
 
 header,
 nav {
+    font-weight: bold;
     background-color: #ffcc00;
     /* Amarelo escuro */
     color: #070202;
@@ -109,6 +110,7 @@ nav {
 }
 
 nav a {
+    font-weight: bold;
     font-family: Arial, sans-serif;
     background-color: #f6f6f6;
     text-decoration: none;
