@@ -109,6 +109,8 @@ nav {
 }
 
 nav a {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
     text-decoration: none;
     color: #0b0808;
     margin: 10px;
