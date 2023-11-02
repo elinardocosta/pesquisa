@@ -7,11 +7,13 @@
     box-sizing: border-box;
 }
 
+/* Estilos básicos do corpo do documento */
 body {
     font-family: Arial, sans-serif;
     background-color: #f6f6f6;
 }
 
+/* Estilos do contêiner principal */
 .container {
     max-width: 750px;
     margin: 0 auto;
@@ -24,6 +26,7 @@ body {
     /* Sutil sombra */
 }
 
+/* Estilos do conteúdo da página */
 .page-content {
     display: flex;
     flex-direction: column;
@@ -31,20 +34,23 @@ body {
     /* Alinhar os elementos no centro */
 }
 
+/* Estilos do cabeçalho principal */
 h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 10px;
     font-size: 24px;
     /* Tamanho da fonte aumentado para um visual mais leve */
+    margin-bottom: 10px;
 }
 
+/* Estilos das etiquetas */
 label {
     font-weight: bold;
     color: #555;
     margin-bottom: 5px;
 }
 
+/* Estilos para botões e campos de arquivo */
 input[type="file"],
 button {
     font-weight: bold;
@@ -59,11 +65,13 @@ button {
     /* Cor do texto dos botões para preto */
 }
 
+/* Estilos de hover para botões */
 button:hover {
     background-color: #f9df78;
     /* Amarelo escuro para realce */
 }
 
+/* Estilos para os resultados */
 #results {
     margin-top: 30px;
     border: 1px solid #ccc;
@@ -74,7 +82,7 @@ button:hover {
     /* Sutil sombra */
 }
 
-/* Removendo estilos desnecessários para input[type="file"] */
+/* Remoção de estilos desnecessários para input[type="file"] */
 input[type="file"] {
     font-weight: bold;
     appearance: none;
@@ -90,8 +98,10 @@ input[type="file"] {
     overflow: hidden !important;
 }
 
-/* styles.css para mobile */
+/* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
+
+    /* Estilos de navegação em telas menores */
     nav {
         display: flex;
         flex-direction: column;
@@ -99,6 +109,7 @@ input[type="file"] {
     }
 }
 
+/* Estilos do cabeçalho e da navegação */
 header,
 nav {
     font-weight: bold;
@@ -106,9 +117,10 @@ nav {
     /* Amarelo escuro */
     color: #070202;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
 
+/* Estilos para links de navegação */
 nav a {
     font-weight: bold;
     font-family: Arial, sans-serif;
@@ -118,7 +130,7 @@ nav a {
     font-size: 24px;
 }
 
-/* Estilizando o botão de forma mais consistente */
+/* Estilizando botões de forma mais consistente */
 button {
     background-color: #ffcc00;
     /* Amarelo escuro */
@@ -130,14 +142,16 @@ button {
     /* Cor do texto dos botões para preto */
 }
 
+/* Estilos para a tela de carregamento */
 #loading {
     text-align: center;
     font-size: 48px;
 }
 
+/* Estilos para o elemento de carregamento (loader) */
 .loader {
     position: absolute;
-    top: 68%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 4px solid rgba(255, 255, 255, 0.4);
@@ -157,16 +171,4 @@ button {
     100% {
         transform: translate(-50%, -50%) rotate(360deg);
     }
-}
-
-.footer {
-    text-align: center;
-    background-color: #ffcc00;
-    /* Amarelo escuro */
-    color: #090000;
-    padding: 10px;
-    /* Aumentei o padding para um visual mais espaçado */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
