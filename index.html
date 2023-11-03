@@ -1,3 +1,4 @@
+
 <!-- <script src="build/pdf.js"></script>   <script src="build/pdf.worker.js"></script>   -->
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <nav>
-    <a href="#">2023 - EMEF Maria Aparecida do Nascimento</a>
+    <a href="#">Diário Oficial</a>
     <!-- <a href="#">Sobre Nós</a>
    // <a href="#">Serviços</a>
     //<a href="#">Contato</a> -->
@@ -19,12 +20,13 @@
 
 <body>
     <div class="container">
+
         <h1>Busca de RF em D.O</h1><br>
         <label for="fileInput">Selecionar o Arquivo PDF da Ediçao baixado</label>
         <input type="file" id="fileInput" accept=".pdf"><br><br>
         <button id="meuBotao" onclick="searchCodes(),ocultarLabel()">Buscar RFs no Diário Oficial</button><br>
 
-        <div id="loading" style="display: none;"><br>
+        <div id="loading" style="display: none;">
             Aguarde...
             <div class="loader"></div>
         </div>
@@ -38,9 +40,9 @@
             4 - Aguarde...<br>
         </label>
     </div>
-    <!-- <div class="footer">
-        <p>&copy; 2023 - EMEF Maria Aparecida do Nascimento</p>
-    </div> -->
+    <div class="footer">
+
+    </div>
 
     </div>
     <script src="pdf.js"></script>
