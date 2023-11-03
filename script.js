@@ -3,16 +3,20 @@
 function ocultarLabel() {
     var label = document.getElementById("minhaLabel");
     label.style.display = "none";
+    // document.getElementById("minhaLabel").style.display = "block"; // Exibe a label quando 
 }
 
 function mostrarBarraDeAguarde() {
+
     var loading = document.getElementById("loading");
     loading.style.display = "block";
 }
 
 function ocultarBarraDeAguarde() {
+    document.getElementById("minhaLabel").style.display = "none"; // Oculta a label
     var loading = document.getElementById("loading");
     loading.style.display = "none";
+
 }
 
 function searchCodes() {
@@ -27,9 +31,7 @@ function searchCodes() {
 
     const selectedFile = fileInput.files[0];
     const codesList = [
-        // (seu código RF)
-        // Lista de RF a serem pesquisados
-        "8087539",  //HEROS RODRIGUES DE MORAIS
+        // Lista de RF a serem pesquisados        
         "9233521",  // ADRIANO ANTUNES DE SALVES
         "8285187",  // ALESSANDRA RAYMUNDO
         "7971427",  //ALESSANDRA SERICAWA BROCCO SILVA
@@ -64,6 +66,7 @@ function searchCodes() {
         "7871643",  //FERNANDA DIAS DA SILVA
         "9191364",  //GABRIELA DA SILVA FERREIRA DE LIMA
         "9114696",  //HANNA TEIXEIRA DIAS
+        "8087539",  //HEROS RODRIGUES DE MORAIS
         "8840989",  //IVONE SIQUEIRA LUIZ
         "8428930",  //JANAINA STEFANIE ALVARES HUBNER
         "9212451",  //JULIA AZEREDO DA SILVA
@@ -151,12 +154,13 @@ function searchCodes() {
 
                     // Chame a função para ocultar a barra de aguarde após a busca estar completa
                     ocultarBarraDeAguarde();
+
                 });
             });
         };
         fileReader.readAsArrayBuffer(selectedFile);
     } else {
-        resultsDiv.innerHTML = "Selecione o arquivo PDF da Edição." + "<br><br>";
+        resultsDiv.innerHTML = "Por favor: Selecione o arquivo PDF da Edição." + "<br><br>";
         // Chame a função para ocultar a barra de aguarde em caso de erro
         ocultarBarraDeAguarde();
     }
