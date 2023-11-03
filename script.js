@@ -1,5 +1,3 @@
-
-
 function ocultarLabel() {
     var label = document.getElementById("minhaLabel");
     label.style.display = "none";
@@ -27,7 +25,7 @@ function searchCodes() {
     mostrarBarraDeAguarde();
 
     const fileInput = document.getElementById('fileInput');
-    const resultsDiv = document.getElementById('results');
+    const resultsDiv = document.getElementById('resultsDiv');
 
     const selectedFile = fileInput.files[0];
     const codesList = [
@@ -141,14 +139,24 @@ function searchCodes() {
                     }
 
                     // Exibe os resultados
-                    resultsDiv.innerHTML = "Busca Concluída... <br><br>" +
-                        "RFs encontradas no Diário Oficial desta Edição <br><br>";
+                    if (codesList.length === 0) {
+                        resultsDiv.innerHTML = "Nenhum RF encontrado nesta Edição";
+                    } else {
+                        resultsDiv.innerHTML = "Busca Concluída... <br><br>" +
+                            "RFs encontradas no Diário Oficial desta Edição <br><br>";
 
-                    for (const code of codesList) {
-                        const lines = codeToLinesMap[code];
-                        if (lines.length > 0) {
-                            resultsDiv.innerHTML += `RF :     -  ${code} <br>`;
-                            //resultsDiv.innerHTML += "  - " + lines.join() + " <br>";
+                        let foundRF = false; // Variável para verificar se pelo menos um RF foi encontrado
+
+                        for (const code of codesList) {
+                            const lines = codeToLinesMap[code];
+                            if (lines.length > 0) {
+                                resultsDiv.innerHTML += `RF :     -  ${code} <br>`;
+                                foundRF = true; // Um RF foi encontrado
+                            }
+                        }
+
+                        if (!foundRF) {
+                            resultsDiv.innerHTML = "Nenhum RF encontrado nesta Edição<br>"; // Exibe a mensagem se nenhum RF for encontrado
                         }
                     }
 
@@ -160,7 +168,7 @@ function searchCodes() {
         };
         fileReader.readAsArrayBuffer(selectedFile);
     } else {
-        resultsDiv.innerHTML = "Por favor: Selecione o arquivo PDF da Edição." + "<br><br>";
+        resultsDiv.innerHTML = "Por favor: Selecione o arquivo PDF da Edição." + "<br>";
         // Chame a função para ocultar a barra de aguarde em caso de erro
         ocultarBarraDeAguarde();
     }
