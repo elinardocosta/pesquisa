@@ -1,8 +1,6 @@
-
 <!-- <script src="build/pdf.js"></script>   <script src="build/pdf.worker.js"></script>   -->
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,18 +18,18 @@
 
 <body>
     <div class="container">
-
         <h1>Busca de RF em D.O</h1><br>
         <label for="fileInput">Selecionar o Arquivo PDF da Ediçao baixado</label>
         <input type="file" id="fileInput" accept=".pdf"><br><br>
         <button id="meuBotao" onclick="searchCodes(),ocultarLabel()">Buscar RFs no Diário Oficial</button><br>
+
+        <div id="resultsDiv"></div><br>
 
         <div id="loading" style="display: none;">
             Aguarde...
             <div class="loader"></div>
         </div>
 
-        <div id="results"></div><br><br>
 
         <label id="minhaLabel">Obs: Passo a Passo de como utilizar :<br><br>
             1 - Baixe o PDF do D.O em qualquer pasta do computador<br>
