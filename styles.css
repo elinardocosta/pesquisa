@@ -19,7 +19,7 @@ body {
     padding: 20px;
     background-color: #fff;
     /* Fundo branco para um visual mais leve */
-    border: 1px solid #ccc;
+    border: 1px solid #bababa;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     /* Sutil sombra */
@@ -60,13 +60,16 @@ button {
     border-radius: 5px;
     font-size: 16px;
     /* Tamanho da fonte */
-    color: 0089FF;
+    color: #f5f5f5;
     /* Cor do texto dos botões para preto */
 }
 
 /* Estilos de hover para botões */
 button:hover {
-    background-color: 3E00B9;
+    background-color: #1a0279;
+    color: rgb(250, 249, 249);
+    font-size: 17px;
+    ;
     /* Amarelo escuro para realce */
 }
 
@@ -76,7 +79,7 @@ button:hover {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    background-color: #f5f5f5;
+    background-color: #dcdada;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     /* Sutil sombra */
 }
@@ -112,7 +115,7 @@ input[type="file"] {
 header,
 nav {
     font-weight: bold;
-    background-color: ;
+    background-color: #481fee;
     /* Amarelo escuro */
     color: #070202;
     text-align: center;
@@ -124,14 +127,14 @@ nav a {
     font-weight: bold;
     font-family: Arial, sans-serif;
     text-decoration: none;
-    color: #0b0808;
+    color: #fdfbfb;
     margin: 10px;
     font-size: 24px;
 }
 
 /* Estilizando botões de forma mais consistente */
 button {
-    background-color: #ffcc00;
+    background-color: #3939df;
     /* Amarelo escuro */
     border: none;
     border-radius: 5px;
@@ -154,7 +157,7 @@ button {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    background-color: #f5f5f5;
+    background-color: #d9d6d6;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     /* Sutil sombra */
 }
