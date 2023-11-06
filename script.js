@@ -168,7 +168,7 @@ function searchCodes() {
         };
         fileReader.readAsArrayBuffer(selectedFile);
     } else {
-        resultsDiv.innerHTML = "Por favor: Selecione o arquivo PDF da Edição." + "<br>";
+        resultsDiv.innerHTML = "Atenção: Selecione o arquivo PDF da Edição." + "<br>";
         // Chame a função para ocultar a barra de aguarde em caso de erro
         ocultarBarraDeAguarde();
     }
