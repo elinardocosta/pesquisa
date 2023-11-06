@@ -60,13 +60,13 @@ button {
     border-radius: 5px;
     font-size: 16px;
     /* Tamanho da fonte */
-    color: #000;
+    color: 0089FF;
     /* Cor do texto dos botões para preto */
 }
 
 /* Estilos de hover para botões */
 button:hover {
-    background-color: #f9df78;
+    background-color: 3E00B9;
     /* Amarelo escuro para realce */
 }
 
@@ -112,7 +112,7 @@ input[type="file"] {
 header,
 nav {
     font-weight: bold;
-    background-color: #ffcc00;
+    background-color: ;
     /* Amarelo escuro */
     color: #070202;
     text-align: center;
@@ -137,7 +137,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    color: #000;
+    color: 0089FF;
     /* Cor do texto dos botões para preto */
 }
 
