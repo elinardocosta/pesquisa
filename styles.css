@@ -66,11 +66,10 @@ button {
 
 /* Estilos de hover para botões */
 button:hover {
-    background-color: #1a0279;
+    background-color: #388aef;
     color: rgb(250, 249, 249);
     font-size: 17px;
     ;
-    /* Amarelo escuro para realce */
 }
 
 /* Estilos para os resultados */
