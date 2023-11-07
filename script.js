@@ -156,7 +156,7 @@ function searchCodes() {
                         }
 
                         if (!foundRF) {
-                            resultsDiv.innerHTML = "Nenhum RF encontrado nesta Edição<br>"; // Exibe a mensagem se nenhum RF for encontrado
+                            resultsDiv.innerHTML = " * Nenhum RF encontrado nesta Edição<br>"; // Exibe a mensagem se nenhum RF for encontrado
                         }
                     }
 
