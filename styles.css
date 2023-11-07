@@ -115,7 +115,7 @@ input[type="file"] {
 header,
 nav {
     font-weight: bold;
-    background-color: #481fee;
+    background-color: #0ea2d0;
     /* Amarelo escuro */
     color: #070202;
     text-align: center;
@@ -134,7 +134,7 @@ nav a {
 
 /* Estilizando botões de forma mais consistente */
 button {
-    background-color: #3939df;
+    background-color: #0ea2d0;
     /* Amarelo escuro */
     border: none;
     border-radius: 5px;
