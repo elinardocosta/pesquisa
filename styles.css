@@ -156,7 +156,29 @@ button {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    background-color: #d9d6d6;
+    background-color: #b7d4e2;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     /* Sutil sombra */
+}
+
+/* Estilos do rodapé */
+.footer {
+    font-weight: bold;
+    background-color: #0ea2d0;
+    color: #555;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para links do rodapé */
+.footer a {
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    color: #fdfbfb;
+    margin: 10px;
+    font-size: 24px;
 }
