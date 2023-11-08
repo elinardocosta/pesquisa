@@ -138,27 +138,7 @@ function searchCodes() {
                         }
                     }
 
-                    // Exibe os resultados
-                    if (codesList.length === 0) {
-                        resultsDiv.innerHTML = "Nenhum RF encontrado nesta Edição";
-                    } else {
-                        resultsDiv.innerHTML = "Busca Concluída... <br><br>" +
-                            "RFs encontradas no Diário Oficial desta Edição <br><br>";
-
-                        let foundRF = false; // Variável para verificar se pelo menos um RF foi encontrado
-
-                        for (const code of codesList) {
-                            const lines = codeToLinesMap[code];
-                            if (lines.length > 0) {
-                                resultsDiv.innerHTML += `RF :     -  ${code} <br>`;
-                                foundRF = true; // Um RF foi encontrado
-                            }
-                        }
-
-                        if (!foundRF) {
-                            resultsDiv.innerHTML = " * Nenhum RF encontrado nesta Edição<br>"; // Exibe a mensagem se nenhum RF for encontrado
-                        }
-                    }
+                   
 
                     // Chame a função para ocultar a barra de aguarde após a busca estar completa
                     ocultarBarraDeAguarde();
