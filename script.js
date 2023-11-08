@@ -29,7 +29,9 @@ function searchCodes() {
 
     const selectedFile = fileInput.files[0];
     const codesList = [
-        // Lista de RF a serem pesquisados        
+        // Lista de RF a serem pesquisados
+        "EMEF ANDRÉ
+RODRIGUES DE ALCKMIN",
         "9233521",  // ADRIANO ANTUNES DE SALVES
         "8285187",  // ALESSANDRA RAYMUNDO
         "7971427",  //ALESSANDRA SERICAWA BROCCO SILVA
