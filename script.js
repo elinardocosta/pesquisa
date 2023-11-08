@@ -135,8 +135,7 @@ function searchCodes() {
                                     codeToLinesMap[code].push(line);
                                 }
                             }
-                        }
-                    }
+                        }                  
 
                    
 
