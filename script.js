@@ -1,6 +1,4 @@
-// Adicione este código ao seu arquivo script.js
 //inicio do login
-// Adicione este código ao seu arquivo script.js
 const loginPopup = document.getElementById("loginPopup");
 const userSelect = document.getElementById("userSelect");
 const passwordInput = document.getElementById("password");
