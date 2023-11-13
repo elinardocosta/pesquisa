@@ -157,7 +157,7 @@ function searchCodes() {
                             const lines = codeToLinesMap[code].lines;
                             if (lines.length > 0) {
                                 const name = codeToLinesMap[code].name;
-                                resultsDiv.innerHTML += ` - RF:  ${code} - Nome: ${name} <br>------------------------------------------------------------------------------<br>`;
+                                resultsDiv.innerHTML += ` - RF:  ${code} - Nome: ${name} <br> -------------------------------------------------------------------------------------- <br><br>`;
                                 foundRF = true;
                             }
                         }
