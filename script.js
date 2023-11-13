@@ -287,11 +287,10 @@ function searchCodes() {
 }
 
 // abre a pagina web do resultado
-function goToPage(pageNumber) {
-    const pdfViewerUrl = 'path/to/pdfjs/web/viewer.html'; // Atualize para o caminho correto
 
-    // Abre o PDF Viewer em uma nova guia com a página específica
-    window.open(`${pdfViewerUrl}?file=path/to/your/pdf/file.pdf#page=${pageNumber}`, '_blank');
+function goToPage(pageNumber, pdfPath) {
+    // Abre o PDF Viewer em uma nova guia com a página específica e o caminho do PDF buscado
+    window.open(`path/to/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfPath)}#page=${pageNumber}`, '_blank');
 }
 
 
