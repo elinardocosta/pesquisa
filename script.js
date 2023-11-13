@@ -287,7 +287,11 @@ function searchCodes() {
 }
 
 function goToPage(pageNumber) {
-    // Adicione a lógica para navegar até a página específica do PDF
-    // Dependendo da biblioteca usada para exibir o PDF, ajuste este código
-    console.log("Navegar até a página:", pageNumber);
+    const url = window.location.href; // Obtém a URL atual
+    const baseUrl = url.substring(0, url.lastIndexOf("/") + 1); // Obtém a parte da URL antes do nome do arquivo
+
+    const newTabUrl = `${baseUrl}pdf-viewer.html?page=${pageNumber}`; // Modifique de acordo com sua estrutura de URL
+
+    window.open(newTabUrl, "_blank"); // Abre a nova guia com a URL modificada
 }
+
