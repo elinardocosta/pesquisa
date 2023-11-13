@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+/* document.addEventListener("DOMContentLoaded", function () {
     const codeForm = document.getElementById("codeForm");
     const codeInput = document.getElementById("code");
     const nameInput = document.getElementById("name");
@@ -138,4 +138,59 @@ function searchCodes() {
         resultsDiv.innerHTML = "Atenção: Selecione o arquivo PDF da Edição." + "<br>";
         ocultarBarraDeAguarde();
     }
+}  */
+
+
+
+// ... (seu código anterior)
+
+Promise.all(textPromises).then(function (pages) {
+    const codeToLinesMap = {};
+    codesListWithNames.forEach(item => {
+        codeToLinesMap[item.code] = { name: item.name, lines: [] };
+    });
+
+    for (let i = 0; i < pages.length; i++) {
+        const pageText = pages[i].items.map(item => item.str).join('\n');
+        const lines = pageText.split('\n');
+
+        for (const item of codesListWithNames) {
+            const code = item.code;
+            for (const line of lines) {
+                if (line.includes(code)) {
+                    codeToLinesMap[code].lines.push({ line, page: i + 1 });
+                }
+            }
+        }
+    }
+
+    if (codesListWithNames.length === 0) {
+        resultsDiv.innerHTML = "Nenhum RF encontrado nesta Edição";
+    } else {
+        resultsDiv.innerHTML = "Busca Concluída... <br><br>" +
+            "Servidores encontrados no Diário Oficial desta Edição <br><br>";
+
+        let foundRF = false;
+
+        for (const item of codesListWithNames) {
+            const code = item.code;
+            const lines = codeToLinesMap[code].lines;
+            if (lines.length > 0) {
+                const name = codeToLinesMap[code].name;
+                resultsDiv.innerHTML += ` - RF: <a href="#" onclick="showPage(${lines[0].page})">${code}</a> - Nome: ${name} <br>`;
+                foundRF = true;
+            }
+        }
+
+        if (!foundRF) {
+            resultsDiv.innerHTML = " * Nenhum Servidor encontrado nesta Edição<br>";
+        }
+    }
+    ocultarBarraDeAguarde();
+});
+
+// Adicione esta função para mostrar a página correspondente
+function showPage(pageNumber) {
+    // Adicione aqui a lógica para exibir a página correspondente
+    console.log(`Mostrar página ${pageNumber}`);
 }
