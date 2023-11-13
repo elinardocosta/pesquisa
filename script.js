@@ -285,17 +285,15 @@ function searchCodes() {
         ocultarBarraDeAguarde();
     }
 }
+
 // abre a pagina web do resultado
 function goToPage(pageNumber) {
-    // Adicione a lógica para navegar até a página específica do PDF
-    // Dependendo da biblioteca usada para exibir o PDF, ajuste este código
-    console.log("Navegar até a página:", pageNumber);
+    const pdfViewerUrl = 'path/to/pdfjs/web/viewer.html'; // Atualize para o caminho correto
 
-    // Substitua o código abaixo pela lógica real para navegar até a página desejada
-    // Este é um exemplo genérico, você precisará adaptar isso à sua implementação específica
-    const newLocation = `#page=${pageNumber}`;
-
-    // Redireciona para a nova localização
-    window.location.href = newLocation;
+    // Abre o PDF Viewer em uma nova guia com a página específica
+    window.open(`${pdfViewerUrl}?file=path/to/your/pdf/file.pdf#page=${pageNumber}`, '_blank');
 }
+
+
+
 
