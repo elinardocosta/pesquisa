@@ -35,8 +35,6 @@ document.getElementById("loginButton").addEventListener("click", function () {
     }
 });
 //fim do login
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const codeForm = document.getElementById("codeForm");
     const codeInput = document.getElementById("code");
