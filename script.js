@@ -232,14 +232,12 @@ function searchCodes() {
 
                     for (let i = 0; i < pages.length; i++) {
                         const pageText = pages[i].items.map(item => item.str).join('\n');
-                        const lines = pageText.split('\n');
-
                         for (const item of codesListWithNames) {
                             const code = item.code;
-                            for (const line of lines) {
-                                if (line.includes(code)) {
-                                    codeToLinesMap[code].lines.push({ line, page: i + 1 });
-                                }
+                            const regex = new RegExp(`\\b${code}\\b`, 'g'); // Use regex for whole word matching
+                            const matches = pageText.match(regex);
+                            if (matches) {
+                                codeToLinesMap[code].lines.push({ page: i + 1, matches });
                             }
                         }
                     }
@@ -254,13 +252,13 @@ function searchCodes() {
 
                         for (const item of codesListWithNames) {
                             const code = item.code;
-                            const lines = codeToLinesMap[code].lines;
-                            if (lines.length > 0) {
+                            const linesInfo = codeToLinesMap[code].lines;
+                            if (linesInfo.length > 0) {
                                 const name = codeToLinesMap[code].name;
                                 resultsDiv.innerHTML += ` - RF: ${code} - Nome: ${name} - `;
-                                for (const lineObj of lines) {
-                                    resultsDiv.innerHTML += `<a href="#" onclick="goToPage(${lineObj.page}, '${selectedFile.name}')">Página ${lineObj.page}</a>, `;
-                                }
+                                linesInfo.forEach(info => {
+                                    resultsDiv.innerHTML += `<a href="#" onclick="goToPage(${info.page})">Página ${info.page}</a>, `;
+                                });
                                 resultsDiv.innerHTML = resultsDiv.innerHTML.slice(0, -2) + "<br>";
                                 foundRF = true;
                             }
@@ -281,12 +279,8 @@ function searchCodes() {
     }
 }
 
-// abre a pagina web do resultado
-
-function goToPage(pageNumber, pdfPath) {
-    const pdfViewerUrl = 'path/to/pdfjs/web/viewer.html'; // Atualize para o caminho correto
-
-    // Abre o PDF Viewer em uma nova guia com a página específica
-    window.open(`${pdfViewerUrl}?file=${encodeURIComponent(pdfPath)}#page=${pageNumber}`, '_blank');
+function goToPage(pageNumber) {
+    // Adicione a lógica para navegar até a página específica do PDF
+    // Dependendo da biblioteca usada para exibir o PDF, ajuste este código
+    console.log("Navegar até a página:", pageNumber);
 }
-
