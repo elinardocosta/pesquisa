@@ -287,21 +287,15 @@ function searchCodes() {
 }
 // abre a pagina web do resultado
 function goToPage(pageNumber) {
-    const pdfViewer = document.getElementById("pdfViewer"); // Substitua "pdfViewer" pelo ID do elemento que exibe o PDF
-
     // Adicione a lógica para navegar até a página específica do PDF
     // Dependendo da biblioteca usada para exibir o PDF, ajuste este código
     console.log("Navegar até a página:", pageNumber);
 
     // Substitua o código abaixo pela lógica real para navegar até a página desejada
     // Este é um exemplo genérico, você precisará adaptar isso à sua implementação específica
-    if (pdfViewer) {
-        pdfViewer.currentPageNumber = pageNumber;
-    } else {
-        console.error("Elemento de visualização do PDF não encontrado.");
-    }
+    const newLocation = `#page=${pageNumber}`;
 
-    // Abre o link em uma nova guia
-    window.open(`#page=${pageNumber}`, "_blank");
+    // Redireciona para a nova localização
+    window.location.href = newLocation;
 }
 
