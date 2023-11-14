@@ -155,7 +155,8 @@ button {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    background-color: #d3ecef;
+    background-color: #d2d3d4;
+    color: #0a0a0a;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     /* Sutil sombra */
     font-size: 16px;
