@@ -149,8 +149,8 @@ button {
     padding: 10px;
     border-radius: 5px;
     background-color: #E6E6FA;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    /* Sutil sombra */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+    font-size: 10px;
 }
 
 /* Estilos do rodapé */
