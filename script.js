@@ -132,11 +132,7 @@ function searchCodes() {
         foundRF = true;
     }
 }
-
-
-                        
-
-                        if (!foundRF) {
+ if (!foundRF) {
                             resultsDiv.innerHTML = " * Nenhum Servidor encontrado nesta Edição<br>";
                         }
                     }
