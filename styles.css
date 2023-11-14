@@ -14,27 +14,31 @@ body {
 
 /* Estilos do contêiner principal */
 .container {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff; /* Fundo branco para um visual mais leve */
+    background-color: #fff;
+    /* Fundo branco para um visual mais leve */
     border: 1px solid #bababa;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* Sutil sombra */
 }
 
 /* Estilos do conteúdo da página */
 .page-content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Alinhar os elementos no centro */
+    align-items: center;
+    /* Alinhar os elementos no centro */
 }
 
 /* Estilos do cabeçalho principal */
 h1 {
     text-align: center;
     color: #333;
-    font-size: 24px;   /* Tamanho da fonte aumentado para um visual mais leve */
+    font-size: 24px;
+    /* Tamanho da fonte aumentado para um visual mais leve */
     margin-bottom: 10px;
 }
 
@@ -54,8 +58,10 @@ button {
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px; /* Tamanho da fonte */
-    color: #f5f5f5; /* Cor do texto dos botões para preto */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    color: #f5f5f5;
+    /* Cor do texto dos botões para preto */
 }
 
 /* Estilos de hover para botões */
@@ -72,8 +78,9 @@ button:hover {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    background-color: #E6E6FA;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+    background-color: #dcdada;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* Sutil sombra */
 }
 
 /* Remoção de estilos desnecessários para input[type="file"] */
@@ -108,6 +115,7 @@ header,
 nav {
     font-weight: bold;
     background-color: #0ea2d0;
+    /* Amarelo escuro */
     color: #070202;
     text-align: center;
     padding: 15px;
@@ -126,7 +134,6 @@ nav a {
 /* Estilizando botões de forma mais consistente */
 button {
     background-color: #0ea2d0;
-    /* Amarelo escuro */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -148,8 +155,10 @@ button {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    background-color: #E6E6FA;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+    background-color: #d3ecef;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* Sutil sombra */
+    font-size: 16px;
 }
 
 /* Estilos do rodapé */
@@ -169,7 +178,7 @@ button {
     font-weight: bold;
     font-family: Arial, sans-serif;
     text-decoration: none;
-    color: #87CEFA;
+    color: #fdfbfb;
     margin: 10px;
     font-size: 24px;
 }
