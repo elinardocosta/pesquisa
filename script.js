@@ -1,38 +1,43 @@
-
+// Espera até que o DOM seja completamente carregado antes de executar o código
 document.addEventListener("DOMContentLoaded", function () {
+    // Obtém elementos do formulário e da lista
     const codeForm = document.getElementById("codeForm");
     const codeInput = document.getElementById("code");
     const nameInput = document.getElementById("name");
     const codeList = document.getElementById("codeList");
 
-    // Load existing data from local storage
+    // Carrega dados existentes do armazenamento local
     const savedData = JSON.parse(localStorage.getItem("codeAndNameData")) || [];
 
-    // Display existing data
+    // Exibe os dados existentes na lista
     savedData.forEach(item => {
         createListItem(item.code, item.name);
     });
 
+    // Adiciona um ouvinte de evento para o formulário de código
     codeForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
+        // Obtém valores dos campos do formulário
         const code = codeInput.value.trim();
         const name = nameInput.value.trim();
 
+        // Verifica se ambos os campos estão preenchidos
         if (code && name) {
-            // Add the code and name to the list
+            // Adiciona o código e o nome à lista
             createListItem(code, name);
 
-            // Save the data in local storage
+            // Salva os dados no armazenamento local
             savedData.push({ code, name });
             localStorage.setItem("codeAndNameData", JSON.stringify(savedData));
 
-            // Clear the form inputs
+            // Limpa os campos do formulário
             codeInput.value = "";
             nameInput.value = "";
         }
     });
 
+    // Função para criar um elemento de lista e adicioná-lo à lista
     function createListItem(code, name) {
         const listItem = document.createElement("li");
         listItem.textContent = `${code}: ${name}`;
@@ -40,41 +45,56 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Função para ocultar uma label
 function ocultarLabel() {
     var label = document.getElementById("minhaLabel");
     label.style.display = "none";
 }
 
+// Função para mostrar a barra de aguarde
 function mostrarBarraDeAguarde() {
     var loading = document.getElementById("loading");
     loading.style.display = "block";
 }
 
+// Função para ocultar a barra de aguarde e uma label
 function ocultarBarraDeAguarde() {
     document.getElementById("minhaLabel").style.display = "none";
     var loading = document.getElementById("loading");
     loading.style.display = "none";
 }
 
+// Função para realizar a busca de códigos em um arquivo PDF
 function searchCodes() {
+    // Oculta a label e mostra a barra de aguarde
     ocultarLabel();
     mostrarBarraDeAguarde();
 
+    // Obtém elementos do formulário e do resultado
     const fileInput = document.getElementById('fileInput');
     const resultsDiv = document.getElementById('resultsDiv');
 
+    // Obtém o arquivo selecionado
     const selectedFile = fileInput.files[0];
-    const codesListWithNames = [
-        // Lista de RF a serem pesquisados
-        { code: "9233521", name: "ADRIANO ANTUNES DE SALVES" }, { code: "8285187", name: "ALESSANDRA RAYMUNDO" }, { code: "7971427", name: "ALESSANDRA SERICAWA BROCCO SILVA" }, { code: "8398542", name: "AMANDA ALVES DOS SANTOS PEDRO" }, { code: "8029482", name: "ANA LUCIA CARVALHO" }, { code: "8791210", name: "ANA PAULA RODRIGUES HONORIO" }, { code: "8063494", name: "ANA PAULA VIANA COSTA" }, { code: "8821186", name: "ANGELA MARIA DE OLIVEIRA" },       { code: "8259640", name: "APARECIDA VIEIRA DA SILVA" }, { code: "8171831", name: "BEATRIZ CAROLINE BISPO DIAS IBANHEZ" }, { code: "8421790", name: "BEATRIZ NOGUEIRA DE SOUSA" }, { code: "7822529", name: "CARLA FERNANDA BARRETO" }, { code: "8495955", name: "CAROLINA LIMA ANTUNES" }, { code: "8279071", name: "CELIA REGINA LUNA TOPGIAN" }, { code: "8163481", name: "CLAUDIA MARIA AMADOR RUSSO" }, { code: "8259011", name: "CLAUDINEI DA SILVA CRUZ" },        { code: "7736835", name: "CLAUDIO VIEIRA DA SILVA" }, { code: "8139539", name: "CRISTINA APARECIDA DA SILVA DE OLIVEIRA" }, { code: "8469504", name: "DANIELE DE MELO OLIVEIRA DE CARVALHO" }, { code: "8500860", name: "DAVI AUGUSTO DE ARAUJO MACEDO" }, { code: "9229787", name: "DEBORA SEGURA PAIXAO" }, { code: "9233563", name: "DIRCE MARIA ROSA DE OLIVEIRA" }, { code: "7106921", name: "DORVAL DA COSTA TORRES" }, { code: "7989946", name: "EDSON LIMA" },  { code: "6865682", name: "ELAINE CRISTINA CARDOSO SETRINI" }, { code: "8471622", name: "ELDIENE SOARES DE OLIVEIRA" }, { code: "8830649", name: "ELINARDO NOGUEIRA COSTA" }, { code: "9233512", name: "ELIONAI CRUZ CONCEICAO COELHO" }, { code: "8815585", name: "EMERICK RANNYERY CHICOLLI AGUIAR" }, { code: "8230901", name: "FABIANA ANDRADE DE LACERDA SILVA" }, { code: "8257833", name: "FABIO FERREIRA RAMOS" }, { code: "7871643", name: "FERNANDA DIAS DA SILVA" },        { code: "9191364", name: "GABRIELA DA SILVA FERREIRA DE LIMA" }, { code: "9114696", name: "HANNA TEIXEIRA DIAS" }, { code: "8087539", name: "HEROS RODRIGUES DE MORAIS" }, { code: "8840989", name: "IVONE SIQUEIRA LUIZ" }, { code: "8428930", name: "JANAINA STEFANIE ALVARES HUBNER" }, { code: "9212451", name: "JULIA AZEREDO DA SILVA" }, { code: "8964327", name: "JOELMA DOS SANTOS" },        { code: "8183031", name: "JOSE AUGUSTO LOPES DE ALENCAR" }, { code: "8970661", name: "KAUANE SILVA SEVERINO" }, { code: "8031304", name: "LAERCIO JOSE DE DEUS JUNIOR" }, { code: "8514631", name: "LIGIA PERPETUO CAPELO FURUGUEM" }, { code: "9156011", name: "LILIANE REGINA LIMA SILVA" }, { code: "6789587", name: "LUIZ CARLOS CRISTAN" }, { code: "8497036", name: "MARIA APARECIDA PACCA DA SILVA" }, { code: "7487959", name: "MARIA DE FATIMA LIMA VIEIRA" },        { code: "7514981", name: "NUBIA VIEIRA DE ARAUJO CERQUEIRA" }, { code: "8839131", name: "OLINDA ROBERTO LEANDRO" }, { code: "7176783", name: "ORLANDO NUNES DE BRITO" }, { code: "7590547", name: "PAULINA APARECIDA ZEFERINO" }, { code: "8482985", name: "PAULO SERGIO BRAZ" }, { code: "8470634", name: "RAFAEL BELMONTE SILVA" }, { code: "9239863", name: "RAFAEL DE MELO FERRAZ" }, { code: "8427071", name: "REJANE BORBA SANTIAGO SILVA" },        { code: "8964858", name: "RENATA DE ANDRADE ALVES" }, { code: "8456542", name: "RONALDO DE OLIVEIRA" }, { code: "8456054", name: "ROSANE ALEXANDRE ALVES" }, { code: "7976470", name: "ROSANGELA APARECIDA FONSECA" }, { code: "8251592", name: "SAMUEL FERNANDES CALDAS" }, { code: "8346178", name: "SAMUEL FERREIRA DE CAMPOS" }, { code: "8163111", name: "SANDRO RAMOS DOS SANTOS" }, { code: "9145770", name: "SARA GOIS NASCIMENTO" },        { code: "8482616", name: "SUE ELLEN CRISTINA LUZ DE MELO CADETE" }, { code: "8795568", name: "TIANE MARISE RODRIGUES CHAGAS" }, { code: "8821917", name: "TAUANA LOPES NEPONUCENO" }, { code: "7546823", name: "VERA LUCIA AYKO TAKARA" }, { code: "8044368", name: "VERONICE TAVEIRA DE MELO" }, { code: "7919905", name: "VIVIANE CARVALHO DE OLIVEIRA" }    
-    ];    // Adicione mais códigos e nomes se necessário  na frente do codigo acima
 
+    // Lista de códigos e nomes a serem pesquisados
+    const codesListWithNames = [
+        // ... (códigos e nomes)
+    ]; // Adicione mais códigos e nomes se necessário na frente do código acima
+
+    // Verifica se um arquivo foi selecionado
     if (selectedFile) {
+        // Cria um leitor de arquivo
         const fileReader = new FileReader();
+
+        // Define a função a ser executada quando o arquivo for carregado
         fileReader.onload = function (e) {
+            // Converte os dados do PDF para um array de bytes
             const pdfData = new Uint8Array(e.target.result);
 
+            // Usa a biblioteca pdf.js para obter o documento PDF
             pdfjsLib.getDocument(pdfData).promise.then(function (pdfDoc) {
+                // Promessas para obter o texto de cada página do PDF
                 const textPromises = [];
 
                 for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
@@ -83,17 +103,20 @@ function searchCodes() {
                     }));
                 }
 
+                // Quando todas as promessas de texto forem resolvidas
                 Promise.all(textPromises).then(function (pages) {
+                    // Mapeia códigos para as linhas correspondentes nas páginas
                     const codeToLinesMap = {};
                     codesListWithNames.forEach(item => {
                         codeToLinesMap[item.code] = { name: item.name, lines: [] };
                     });
 
+                    // Itera sobre as páginas e verifica a correspondência dos códigos
                     for (let i = 0; i < pages.length; i++) {
                         const pageText = pages[i].items.map(item => item.str).join('\n');
                         for (const item of codesListWithNames) {
                             const code = item.code;
-                            const regex = new RegExp(`\\b${code}\\b`, 'g'); // Use regex for whole word matching
+                            const regex = new RegExp(`\\b${code}\\b`, 'g'); // Usa regex para correspondência de palavra inteira
                             const matches = pageText.match(regex);
                             if (matches) {
                                 codeToLinesMap[code].lines.push({ page: i + 1, matches });
@@ -101,6 +124,7 @@ function searchCodes() {
                         }
                     }
 
+                    // Exibe os resultados na página
                     if (codesListWithNames.length === 0) {
                         resultsDiv.innerHTML = "Nenhum RF encontrado nesta Edição";
                     } else {
@@ -110,43 +134,51 @@ function searchCodes() {
                         let foundRF = false;
 
                         for (const item of codesListWithNames) {
-    const code = item.code;
-    const linesInfo = codeToLinesMap[code].lines;
-    if (linesInfo.length > 0) {
-        const name = codeToLinesMap[code].name;
-        const resultDivContent = ` - RF: ${code} - Nome: ${name} - `;
-        
-        linesInfo.forEach(info => {
-            const link = document.createElement('a');
-            link.href = '#';
-            link.textContent = `Página ${info.page}`;
-            link.onclick = function(event) {
-                event.preventDefault(); // Evita a recarga da página
-                goToPage(info.page);
-            };
+                            const code = item.code;
+                            const linesInfo = codeToLinesMap[code].lines;
+                            if (linesInfo.length > 0) {
+                                const name = codeToLinesMap[code].name;
+                                const resultDivContent = ` - RF: ${code} - Nome: ${name} - `;
 
-            resultDivContent += link.outerHTML + ', ';
-        });
+                                linesInfo.forEach(info => {
+                                    const link = document.createElement('a');
+                                    link.href = '#';
+                                    link.textContent = `Página ${info.page}`;
+                                    link.onclick = function (event) {
+                                        event.preventDefault(); // Evita a recarga da página
+                                        goToPage(info.page);
+                                    };
 
-        resultsDiv.innerHTML += resultDivContent.slice(0, -2) + "<br>";
-        foundRF = true;
-    }
-}
- if (!foundRF) {
+                                    resultDivContent += link.outerHTML + ', ';
+                                });
+
+                                resultsDiv.innerHTML += resultDivContent.slice(0, -2) + "<br>";
+                                foundRF = true;
+                            }
+                        }
+
+                        // Se nenhum RF for encontrado
+                        if (!foundRF) {
                             resultsDiv.innerHTML = " * Nenhum Servidor encontrado nesta Edição<br>";
                         }
                     }
+
+                    // Oculta a barra de aguarde
                     ocultarBarraDeAguarde();
                 });
             });
         };
+
+        // Lê o arquivo como um array de bytes
         fileReader.readAsArrayBuffer(selectedFile);
     } else {
+        // Se nenhum arquivo for selecionado
         resultsDiv.innerHTML = "Atenção: Selecione o arquivo PDF da Edição." + "<br>";
         ocultarBarraDeAguarde();
     }
 }
 
+// Função para navegar até uma página específica do PDF
 function goToPage(pageNumber) {
     // Adicione a lógica para navegar até a página específica do PDF
     // Dependendo da biblioteca usada para exibir o PDF, ajuste este código
