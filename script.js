@@ -116,7 +116,7 @@ function searchCodes() {
                                 const name = codeToLinesMap[code].name;
                                 resultsDiv.innerHTML += ` - RF: ${code} - Nome: ${name} - `;
                                 linesInfo.forEach(info => {
-                                    resultsDiv.innerHTML += `<a href="#" onclick="goToPage(${info.page})">Página ${info.page}</a>, `;
+                                    resultsDiv.innerHTML += `<a href="" onclick="goToPage(${info.page})">Página ${info.page}</a>, `;
                                 });
                                 resultsDiv.innerHTML = resultsDiv.innerHTML.slice(0, -2) + "<br>";
                                 foundRF = true;
