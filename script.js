@@ -118,6 +118,7 @@ function searchCodes() {
 
                         let foundRF = false;
 
+                        //--------
                         for (const item of codesListWithNames) {
                             const code = item.code;
                             const lines = codeToLinesMap[code].lines;
@@ -125,13 +126,14 @@ function searchCodes() {
                                 const name = codeToLinesMap[code].name;
                                 resultsDiv.innerHTML += ` - RF: ${code} - Nome: ${name} - `;
                                 for (const lineObj of lines) {
-                                    resultsDiv.innerHTML += `<span style="color: blue; text-decoration: none; cursor: default;">Página ${lineObj.page}</span>, `;
+                                    // Chama a função openPDF passando o caminho do PDF e o número da página
+                                    resultsDiv.innerHTML += `<a href="javascript:void(0);" onclick="openPDF('${selectedFile.name}', ${lineObj.page})">Página ${lineObj.page}</a>, `;
                                 }
                                 resultsDiv.innerHTML = resultsDiv.innerHTML.slice(0, -2) + "<br>";
                                 foundRF = true;
                             }
                         }
-                       
+
                         if (!foundRF) {
                             resultsDiv.innerHTML = " * Nenhum Servidor encontrado nesta Edição<br>";
                         }
@@ -146,12 +148,8 @@ function searchCodes() {
         ocultarBarraDeAguarde();
     }
 }
-
-// abre a pagina web do resultado
-
-function goToPage(pageNumber, pdfPath) {
-    const pdfViewerUrl = 'path/to/pdfjs/web/viewer.html'; // Atualize para o caminho correto
-
-    // Abre o PDF Viewer em uma nova guia com a página específica
-    window.open(`${pdfViewerUrl}?file=${encodeURIComponent(pdfPath)}#page=${pageNumber}`, '_blank');
+// Abre a página web do resultado
+function openPDF(pdfPath, pageNumber) {
+    // Abre o PDF no visualizador padrão do navegador, incluindo o número da página na URL
+    window.open(`${pdfPath}#page=${pageNumber}`, '_blank');
 }
