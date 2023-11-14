@@ -110,18 +110,31 @@ function searchCodes() {
                         let foundRF = false;
 
                         for (const item of codesListWithNames) {
-                            const code = item.code;
-                            const linesInfo = codeToLinesMap[code].lines;
-                            if (linesInfo.length > 0) {
-                                const name = codeToLinesMap[code].name;
-                                resultsDiv.innerHTML += ` - RF: ${code} - Nome: ${name} - `;
-                                linesInfo.forEach(info => {
-                                    resultsDiv.innerHTML += `<a href="#" onclick="goToPage(${info.page})">Página ${info.page}</a>, `;
-                                });
-                                resultsDiv.innerHTML = resultsDiv.innerHTML.slice(0, -2) + "<br>";
-                                foundRF = true;
-                            }
-                        }
+    const code = item.code;
+    const linesInfo = codeToLinesMap[code].lines;
+    if (linesInfo.length > 0) {
+        const name = codeToLinesMap[code].name;
+        const resultDivContent = ` - RF: ${code} - Nome: ${name} - `;
+        
+        linesInfo.forEach(info => {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.textContent = `Página ${info.page}`;
+            link.onclick = function(event) {
+                event.preventDefault(); // Evita a recarga da página
+                goToPage(info.page);
+            };
+
+            resultDivContent += link.outerHTML + ', ';
+        });
+
+        resultsDiv.innerHTML += resultDivContent.slice(0, -2) + "<br>";
+        foundRF = true;
+    }
+}
+
+
+                        
 
                         if (!foundRF) {
                             resultsDiv.innerHTML = " * Nenhum Servidor encontrado nesta Edição<br>";
