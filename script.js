@@ -125,13 +125,13 @@ function searchCodes() {
                                 const name = codeToLinesMap[code].name;
                                 resultsDiv.innerHTML += ` - RF: ${code} - Nome: ${name} - `;
                                 for (const lineObj of lines) {
-                                    resultsDiv.innerHTML += `<a href="#" onclick="goToPage(${lineObj.page}, '${selectedFile.name}')">Página ${lineObj.page}</a>, `;
+                                    resultsDiv.innerHTML += `<span style="color: blue; text-decoration: none; cursor: default;">Página ${lineObj.page}</span>, `;
                                 }
                                 resultsDiv.innerHTML = resultsDiv.innerHTML.slice(0, -2) + "<br>";
                                 foundRF = true;
                             }
                         }
-
+                       
                         if (!foundRF) {
                             resultsDiv.innerHTML = " * Nenhum Servidor encontrado nesta Edição<br>";
                         }
