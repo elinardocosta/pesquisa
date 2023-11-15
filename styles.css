@@ -149,17 +149,54 @@ button {
     padding: 20px;
 }
 
-/* Estilos para os resultados */
+/* Estilos para a div de resultados */
 #resultsDiv {
     margin-top: 30px;
-    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
-    background-color: #d2d3d4;
+    background-color: #f9f9f9;
+    /* Cor de fundo quase branca */
     color: #0a0a0a;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    /* Sutil sombra */
     font-size: 16px;
+}
+
+/* Estilos para a tabela dentro da div de resultados */
+#resultsDiv table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+/* Estilos para as células (th, td) da tabela dentro da div de resultados */
+#resultsDiv th,
+#resultsDiv td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.2;
+}
+
+/* Estilos para o cabeçalho (th) da tabela dentro da div de resultados */
+#resultsDiv th {
+    background-color: #f2f2f2;
+    /* Cor de fundo mais clara */
+    color: #333;
+    font-weight: bold;
+}
+
+.page {
+    color: blue;
+    text-decoration: none;
+    cursor: default;
+}
+
+.page:not(:last-child) {
+    margin-right: 5px;
+}
+
+#resultsDiv table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
 }
 
 /* Estilos do rodapé */
@@ -173,7 +210,6 @@ button {
     bottom: 0;
     width: 100%;
 }
-
 /* Estilos para links do rodapé */
 .footer a {
     font-weight: bold;
