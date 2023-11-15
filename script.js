@@ -149,6 +149,8 @@ function searchCodes() {
 
                         let foundRF = false;
 
+                        // ... (código anterior) ...
+
                         for (const item of codesListWithNames) {
                             const code = item.code;
                             const lines = codeToLinesMap[code].lines;
@@ -158,14 +160,20 @@ function searchCodes() {
 
                                 // Adiciona uma linha na tabela para cada conjunto de resultados
                                 tableHTML += `
-                                        <tr>
-                                            <td>${code}</td>
-                                            <td>${name}</td>
-                                            <td>`;
+                                    <tr>
+                                        <td>${code}</td>
+                                        <td>${name}</td>
+                                        <td>`;
 
                                 // Adiciona as páginas
-                                for (const lineObj of lines) {
+                                for (let i = 0; i < lines.length; i++) {
+                                    const lineObj = lines[i];
                                     tableHTML += `<span class="page">Página ${lineObj.page}</span>`;
+
+                                    // Adiciona uma vírgula se não for a última página
+                                    if (i < lines.length - 1) {
+                                        tableHTML += ', ';
+                                    }
                                 }
 
                                 // Fecha a linha na tabela
