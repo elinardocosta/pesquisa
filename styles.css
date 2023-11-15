@@ -99,16 +99,69 @@ input[type="file"] {
     overflow: hidden !important;
 }
 
+
 /* Estilos para dispositivos móveis */
 @media (max-width: 768px) {
 
-    /* Estilos de navegação em telas menores */
+    /* Estilos do contêiner principal em telas menores */
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    /* Estilos do cabeçalho e da navegação em telas menores */
+    header,
     nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: 10px;
+    }
+
+    /* Estilos para links de navegação em telas menores */
+    nav a {
+        font-size: 18px;
+        margin: 8px;
+    }
+
+    /* Estilos para botões em telas menores */
+    button {
+        font-size: 14px;
+    }
+
+    /* Estilos para a div de resultados em telas menores */
+    #resultsDiv {
+        margin-top: 20px;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    /* Estilos para a tabela dentro da div de resultados em telas menores */
+    #resultsDiv table {
+        margin-bottom: 8px;
+    }
+
+    /* Estilos para as células (th, td) da tabela dentro da div de resultados em telas menores */
+    #resultsDiv th,
+    #resultsDiv td {
+        padding: 6px;
+    }
+
+    /* Estilos para o cabeçalho (th) da tabela dentro da div de resultados em telas menores */
+    #resultsDiv th {
+        font-size: 16px;
+    }
+
+    /* Estilos do rodapé em telas menores */
+    .footer {
+        padding: 10px;
+    }
+
+    /* Estilos para links do rodapé em telas menores */
+    .footer a {
+        font-size: 18px;
+        margin: 8px;
     }
 }
+
+/* ... fim do codigo para dispositivos moveis ... */
 
 /* Estilos do cabeçalho e da navegação */
 header,
@@ -210,6 +263,7 @@ button {
     bottom: 0;
     width: 100%;
 }
+
 /* Estilos para links do rodapé */
 .footer a {
     font-weight: bold;
