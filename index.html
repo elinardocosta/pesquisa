@@ -1,7 +1,5 @@
-<!-- <script src="build/pdf.js"></script>   <script src="build/pdf.worker.js"></script>   -->
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,11 +8,13 @@
     <script src="build/pdf.worker.js"></script>
     <!-- Adicione essas referências no seu HTML -->
 
-<link rel="stylesheet" type="text/css" href="path/to/pdfjs/web/viewer.css">
-<script src="path/to/pdfjs/build/pdf.js"></script>
-<script src="path/to/pdfjs/web/viewer.js"></script>
+    <link rel="stylesheet" type="text/css" href="path/to/pdfjs/web/viewer.css">
+
+    <script src="path/to/pdfjs/build/pdf.js"></script>
+    <script src="path/to/pdfjs/web/viewer.js"></script>
 
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <nav>
     <a href=" ">Emef Maria Aparecida do Nascimento</a>
@@ -28,16 +28,16 @@
         <h1>Pesquisa em Diário Oficial do Municipio de SP</h1><br>
         <label for="fileInput">Selecionar o Arquivo PDF da Ediçao baixado</label>
         <input type="file" id="fileInput" accept=".pdf"><br><br>
-        <button id="meuBotao" onclick="searchCodes(),ocultarLabel()">Pesquisar em Diário Oficial</button><br>
-
+        <!-- Botão com ícone estilizado -->
+        <button id="meuBotao" onclick="searchCodes(); ocultarLabel();">
+            🔍 Pesquisar em Diário Oficial
+        </button><br>
         <div id="resultsDiv"></div><br>
 
         <div id="loading" style="display: none;">
             Aguarde...
             <div class="loader"></div>
         </div>
-
-
         <label id="minhaLabel">Obs: Passo a Passo de como utilizar :<br><br>
             1 - Baixe o PDF do D.O em qualquer pasta do computador<br>
             2 - Clique no botão: "escolher arquivo" e busque a Edicao baixada<br>
@@ -46,14 +46,11 @@
         </label>
     </div>
     <div class="footer">
-
         @ 2023 Desenvolvido por Elinardo
-
     </div>
-
+    
     </div>
     <script src="pdf.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
