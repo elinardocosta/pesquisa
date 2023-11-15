@@ -116,7 +116,7 @@ function searchCodes() {
                     }
 
                     if (codesListWithNames.length === 0) {
-                        resultsDiv.innerHTML = "Nenhum RF encontrado nesta Edição";
+                        resultsDiv.innerHTML = "* Nenhum Servidor da Unidade encontrado neste Arquivo";
                     } else {
                         // Adiciona o cabeçalho da tabela uma vez
                         let tableHTML = `
