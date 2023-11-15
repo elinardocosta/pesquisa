@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pesquisa em Diário Oficial do Municipio de SP</title>
     <script src="build/pdf.js"></script>
     <script src="build/pdf.worker.js"></script>
@@ -14,24 +16,23 @@
     <script src="path/to/pdfjs/web/viewer.js"></script>
 
     <link rel="stylesheet" href="styles.css">
-    
+
 </head>
 <nav>
-    <a href=" ">Emef Maria Aparecida do Nascimento</a>
-    <!-- <a href="#">Sobre Nós</a>
-   // <a href="#">Serviços</a>
-    //<a href="#">Contato</a> -->
+    <a href=" ">Pesquisa em Diário Oficial do Municipio de SP</a>
+    <!-- <a href="#">Sobre Nós</a>-->
 </nav>
 
 <body>
-    <div class="container">
-        <h1>Pesquisa em Diário Oficial do Municipio de SP</h1><br>
+    <div class="container"><br><br>
+        <h1>Emef Maria Aparecida do Nascimento</h1><br>
         <label for="fileInput">Selecionar o Arquivo PDF da Ediçao baixado</label>
         <input type="file" id="fileInput" accept=".pdf"><br><br>
         <!-- Botão com ícone estilizado -->
         <button id="meuBotao" onclick="searchCodes(); ocultarLabel();">
-            🔍 Pesquisar em Diário Oficial
+            🔍 Pesquisar
         </button><br>
+
         <div id="resultsDiv"></div><br>
 
         <div id="loading" style="display: none;">
@@ -41,16 +42,17 @@
         <label id="minhaLabel">Obs: Passo a Passo de como utilizar :<br><br>
             1 - Baixe o PDF do D.O em qualquer pasta do computador<br>
             2 - Clique no botão: "escolher arquivo" e busque a Edicao baixada<br>
-            3 - clique em: "Pesquisar em Diário Oficial"<br>
+            3 - clique em: "Pesquisar"<br>
             4 - Aguarde...<br>
         </label>
     </div>
     <div class="footer">
-        @ 2023 Desenvolvido por Elinardo
+        @ 2023 Emef Maria Aparecida do Nascimento
     </div>
-    
+
     </div>
     <script src="pdf.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
