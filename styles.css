@@ -54,7 +54,7 @@ input[type="file"],
 button {
     font-weight: bold;
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     margin: 10px 0;
     border: 1px solid #444;
     border-radius: 5px;
@@ -195,7 +195,7 @@ button {
 #loading {
     text-align: center;
     font-size: 48px;
-    padding: 20px;
+    padding: 15px;
 }
 
 /* Estilos para a div de resultados */
@@ -231,9 +231,11 @@ button {
 }
 
 .page {
-    color: #007acc;
+    color: #0480d3;
     text-decoration: none;
     cursor: default;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
 }
 
 .page:not(:last-child) {
