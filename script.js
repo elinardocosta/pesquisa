@@ -85,11 +85,14 @@ function searchCodes() {
     const resultsDiv = document.getElementById('resultsDiv');
 
     // Limpar resultados anteriores
+
+
+    // Limpar resultados anteriores
     resultsDiv.innerHTML = "";
 
     const selectedFile = fileInput.files[0];
     const codesListWithNames = [
-        // Lista de RF a serem pesquisados   // Adicione mais códigos e nomes se necessário
+        // Lista de RF a serem pesquisados
         { code: "9233521", name: "ADRIANO ANTUNES DE SALVES" }, { code: "8285187", name: "ALESSANDRA RAYMUNDO" }, { code: "7971427", name: "ALESSANDRA SERICAWA BROCCO SILVA" }, { code: "8398542", name: "AMANDA ALVES DOS SANTOS PEDRO" }, { code: "8029482", name: "ANA LUCIA CARVALHO" }, { code: "8791210", name: "ANA PAULA RODRIGUES HONORIO" }, { code: "8063494", name: "ANA PAULA VIANA COSTA" }, { code: "8821186", name: "ANGELA MARIA DE OLIVEIRA" },
         { code: "8259640", name: "APARECIDA VIEIRA DA SILVA" }, { code: "8171831", name: "BEATRIZ CAROLINE BISPO DIAS IBANHEZ" }, { code: "8421790", name: "BEATRIZ NOGUEIRA DE SOUSA" }, { code: "7822529", name: "CARLA FERNANDA BARRETO" }, { code: "8495955", name: "CAROLINA LIMA ANTUNES" }, { code: "8279071", name: "CELIA REGINA LUNA TOPGIAN" }, { code: "8163481", name: "CLAUDIA MARIA AMADOR RUSSO" }, { code: "8259011", name: "CLAUDINEI DA SILVA CRUZ" },
         { code: "7736835", name: "CLAUDIO VIEIRA DA SILVA" }, { code: "8139539", name: "CRISTINA APARECIDA DA SILVA DE OLIVEIRA" }, { code: "8469504", name: "DANIELE DE MELO OLIVEIRA DE CARVALHO" }, { code: "8500860", name: "DAVI AUGUSTO DE ARAUJO MACEDO" }, { code: "9229787", name: "DEBORA SEGURA PAIXAO" }, { code: "9233563", name: "DIRCE MARIA ROSA DE OLIVEIRA" }, { code: "7106921", name: "DORVAL DA COSTA TORRES" }, { code: "7989946", name: "EDSON LIMA" },
@@ -135,64 +138,56 @@ function searchCodes() {
                         }
                     }
 
-                    if (codesListWithNames.length === 0) {
-                        resultsDiv.innerHTML = "Nenhum RF encontrado nesta Edição";
-                    } else {
-                        // Adiciona o cabeçalho da tabela uma vez
+                    // Adiciona o cabeçalho da tabela uma vez
+                    let tableHTML = `
+                        <table>
+                            <tr>
+                                <th>RF</th>
+                                <th>Nome</th>
+                                <th>Páginas do D.O</th>
+                            </tr>`;
 
-                        let tableHTML = `
-                                <table>
-                                
-                                    <tr>
-                                        <th>RF</th>
-                                        <th>Nome</th>
-                                        <th>Páginas do D.O</th>
-                                    </tr>`;
+                    let foundRF = false;
 
-                        let foundRF = false;
+                    for (const item of codesListWithNames) {
+                        const code = item.code;
+                        const lines = codeToLinesMap[code].lines;
 
-                        // ... (código anterior) ...
+                        if (lines.length > 0) {
+                            const name = codeToLinesMap[code].name;
 
-                        for (const item of codesListWithNames) {
-                            const code = item.code;
-                            const lines = codeToLinesMap[code].lines;
+                            // Adiciona uma linha na tabela para cada conjunto de resultados
+                            tableHTML += `
+                            <tr>
+                                <td>${code}</td>
+                                <td>${name}</td>
+                                <td>`;
 
-                            if (lines.length > 0) {
-                                const name = codeToLinesMap[code].name;
+                            // Adiciona as páginas
+                            for (let i = 0; i < lines.length; i++) {
+                                const lineObj = lines[i];
+                                tableHTML += `<span class="page">Página ${lineObj.page}</span>`;
 
-                                // Adiciona uma linha na tabela para cada conjunto de resultados
-                                tableHTML += `
-                                    <tr>
-                                        <td>${code}</td>
-                                        <td>${name}</td>
-                                        <td>`;
-
-                                // Adiciona as páginas
-                                for (let i = 0; i < lines.length; i++) {
-                                    const lineObj = lines[i];
-                                    tableHTML += `<span class="page">Página ${lineObj.page}</span>`;
-
-                                    // Adiciona uma vírgula se não for a última página
-                                    if (i < lines.length - 1) {
-                                        tableHTML += ', ';
-                                    }
+                                // Adiciona uma vírgula se não for a última página
+                                if (i < lines.length - 1) {
+                                    tableHTML += ', ';
                                 }
-
-                                // Fecha a linha na tabela
-                                tableHTML += `</td></tr>`;
-                                foundRF = true;
                             }
-                        }
-                        tableHTML += " * Servidores da Unidade encontrado neste Arquivo<br><br>";
-                        // Fecha a tabela
-                        tableHTML += `</table><br>`;
 
-                        if (!foundRF) {
-                            tableHTML += " * Nenhum Servidor da Unidade encontrado neste Arquivo<br>";
+                            // Fecha a linha na tabela
+                            tableHTML += `</td></tr>`;
+                            foundRF = true;
                         }
-
-                        resultsDiv.innerHTML = tableHTML;
                     }
+                    tableHTML += "<span style='font-size: 20px;'> * Servidores da Unidade encontrado neste Arquivo</span><br><br>";
+                    // Fecha a tabela
+                    tableHTML += `</table><br>`;
+
+                    if (!foundRF) {
+                        tableHTML = "<span style='font-size: 20px;'> * Nenhum Servidor da Unidade encontrado neste Arquivo<br></span>";
+                    }
+
+                    resultsDiv.innerHTML = tableHTML;
 
                     ocultarBarraDeAguarde();
                 });
@@ -200,7 +195,7 @@ function searchCodes() {
         };
         fileReader.readAsArrayBuffer(selectedFile);
     } else {
-        resultsDiv.innerHTML = "Atenção: Selecione o arquivo PDF da Edição." + "<br>";
+        resultsDiv.innerHTML = "<span style='font-size: 20px;'>Atenção: Selecione o arquivo PDF da Edição.</span>" + "<br>";
         ocultarBarraDeAguarde();
     }
 }
