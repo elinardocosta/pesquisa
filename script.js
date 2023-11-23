@@ -202,12 +202,12 @@ function searchCodes() {
                             foundRF = true;
                         }
                     }
-                    tableHTML += "<span style='font-size: 20px;'> * Servidores da Unidade encontrado neste Arquivo</span><br><br>";
+                    tableHTML += "<span style='font-size: 24px;'> * Servidores da Unidade encontrado neste Arquivo</span><br><br>";
                     // Fecha a tabela
                     tableHTML += `</table><br>`;
 
                     if (!foundRF) {
-                        tableHTML = "<span style='font-size: 20px;'> * Nenhum Servidor da Unidade encontrado neste Arquivo<br></span>";
+                        tableHTML = "<span style='font-size: 24px;'> * Nenhum Servidor da Unidade encontrado neste Arquivo<br></span>";
                     }
 
                     resultsDiv.innerHTML = tableHTML;
@@ -218,7 +218,7 @@ function searchCodes() {
         };
         fileReader.readAsArrayBuffer(selectedFile);
     } else {
-        resultsDiv.innerHTML = "<span style='font-size: 20px;'>Atenção: Selecione o arquivo PDF da Edição.</span>" + "<br>";
+        resultsDiv.innerHTML = "<span style='font-size: 24px;'>Atenção: Selecione o arquivo PDF da Edição.</span>" + "<br>";
         ocultarBarraDeAguarde();
     }
 }
