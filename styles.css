@@ -79,7 +79,7 @@ button {
     font-weight: bold;
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 0;
     border: 1px solid #2980b9;
     border-radius: 5px;
     font-size: 18px;
@@ -177,9 +177,6 @@ button:hover {
         padding: 10px;
     }
 
-    #meuBotao {
-        text-align: center;
-    }
 }
 
 /* Estilos para o pop-up no canto direito -->*/
@@ -231,10 +228,32 @@ button:hover {
 .close-btn {
     cursor: pointer;
     background-color: #48f;
+    /* Cor de fundo azul */
     color: #fff;
+    /* Cor do texto branco */
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     margin-top: 10px;
+}
+
+.cookie-btn {
+    cursor: pointer;
+    background-color: #0480d3;
+    /* Cor de fundo azul */
+    color: #fff;
+    /* Cor do texto branco */
+    padding: 8px 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.cookie-btn:hover {
+    background-color: #353333;
+    /* Cor de fundo azul mais escura durante o hover */
+    color: #fff;
+    /* Cor do texto branco durante o hover */
 }
