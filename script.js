@@ -10,8 +10,21 @@
     { code: "8964858", name: "RENATA DE ANDRADE ALVES" }, { code: "8456542", name: "RONALDO DE OLIVEIRA" }, { code: "8456054", name: "ROSANE ALEXANDRE ALVES" }, { code: "7976470", name: "ROSANGELA APARECIDA FONSECA" }, { code: "8251592", name: "SAMUEL FERNANDES CALDAS" }, { code: "8346178", name: "SAMUEL FERREIRA DE CAMPOS" }, { code: "8163111", name: "SANDRO RAMOS DOS SANTOS" }, { code: "9145770", name: "SARA GOIS NASCIMENTO" },
     { code: "8482616", name: "SUE ELLEN CRISTINA LUZ DE MELO CADETE" }, { code: "8795568", name: "TIANE MARISE RODRIGUES CHAGAS" }, { code: "8821917", name: "TAUANA LOPES NEPONUCENO" }, { code: "7546823", name: "VERA LUCIA AYKO TAKARA" }, { code: "8044368", name: "VERONICE TAVEIRA DE MELO" }, { code: "7919905", name: "VIVIANE CARVALHO DE OLIVEIRA" }        // Adicione mais códigos e nomes se necessário
 ];*/
+
+/*Adicione os scripts para abrir e fechar o popup-- >*/
+
+function openPopup() {
+    document.getElementById("overlay").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("overlay").style.display = "none";
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // Obtenha referências para os elementos do formulário e da lista
+    document.getElementById("overlay").style.display = "flex";
     const codeForm = document.getElementById("codeForm");
     const codeInput = document.getElementById("code");
     const nameInput = document.getElementById("name");
@@ -24,6 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
     savedData.forEach(item => {
         createListItem(item.code, item.name);
     });
+
+    function openPopup() {
+        $("#overlay").fadeIn();
+    }
+
+    function closePopup() {
+        $("#overlay").fadeOut();
+    }
+
 
     // Adicione um ouvinte de evento para o formulário
     codeForm.addEventListener("submit", function (e) {
@@ -101,6 +123,9 @@ function searchCodes() {
         { code: "8964858", name: "RENATA DE ANDRADE ALVES" }, { code: "8456542", name: "RONALDO DE OLIVEIRA" }, { code: "8456054", name: "ROSANE ALEXANDRE ALVES" }, { code: "7976470", name: "ROSANGELA APARECIDA FONSECA" }, { code: "8251592", name: "SAMUEL FERNANDES CALDAS" }, { code: "8346178", name: "SAMUEL FERREIRA DE CAMPOS" }, { code: "8163111", name: "SANDRO RAMOS DOS SANTOS" }, { code: "9145770", name: "SARA GOIS NASCIMENTO" },
         { code: "8482616", name: "SUE ELLEN CRISTINA LUZ DE MELO CADETE" }, { code: "8795568", name: "TIANE MARISE RODRIGUES CHAGAS" }, { code: "8821917", name: "TAUANA LOPES NEPONUCENO" }, { code: "7546823", name: "VERA LUCIA AYKO TAKARA" }, { code: "8044368", name: "VERONICE TAVEIRA DE MELO" }, { code: "7919905", name: "VIVIANE CARVALHO DE OLIVEIRA" }        // Adicione mais códigos e nomes se necessário
     ];
+
+
+
 
     if (selectedFile) {
         const fileReader = new FileReader();
