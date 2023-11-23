@@ -207,7 +207,7 @@ function searchCodes() {
                     tableHTML += `</table><br>`;
 
                     if (!foundRF) {
-                        tableHTML = "<span style='font-size: 24px;'> * Nenhum Servidor da Unidade encontrado neste Arquivo<br></span>";
+                        tableHTML = ""<br>" + <span style='font-size: 24px;'> * Nenhum Servidor da Unidade encontrado neste Arquivo<br></span>";
                     }
 
                     resultsDiv.innerHTML = tableHTML;
