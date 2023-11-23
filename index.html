@@ -5,28 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pesquisa em Diário Oficial do Municipio de SP</title>
+    <title>Pesquisa em Diário Oficial do Município de SP</title>
     <script src="build/pdf.js"></script>
     <script src="build/pdf.worker.js"></script>
+
     <!-- Adicione essas referências no seu HTML -->
-
     <link rel="stylesheet" type="text/css" href="path/to/pdfjs/web/viewer.css">
-
     <script src="path/to/pdfjs/build/pdf.js"></script>
     <script src="path/to/pdfjs/web/viewer.js"></script>
 
     <link rel="stylesheet" href="styles.css">
 
+
 </head>
+
 <nav>
-    <a href=" ">Pesquisa em Diário Oficial do Municipio de SP</a>
-    <!-- <a href="#">Sobre Nós</a>-->
+    <a href=" ">Pesquisa em Diário Oficial do Município de SP</a>
 </nav>
 
 <body>
-    <div class="container"><br><br>
-        <br>
-        <label for="fileInput"><span style='font-size: 18px;'>Selecionar o Arquivo PDF da Ediçao baixado</span></label>
+    <br>
+    <!-- ... (restante do conteúdo da página) ... -->
+
+    <div class="container"><br>
+        <h1>Emef Maria Aparecida do Nascimento</h1><br>
+        <label for="fileInput"><span style='font-size: 18px;'>Selecionar o Arquivo PDF da Edição
+                baixado</span></label>
         <input type="file" id="fileInput" accept=".pdf"><br><br>
         <!-- Botão com ícone estilizado -->
         <button id="meuBotao" onclick="searchCodes(); ocultarLabel();">
@@ -41,18 +45,47 @@
         </div>
         <label id="minhaLabel">Obs: Passo a Passo de como utilizar :<br><br>
             1 - Baixe o PDF do D.O em qualquer pasta do computador<br>
-            2 - Clique no botão: "escolher arquivo" e busque a Edicao baixada<br>
+            2 - Clique no botão: "escolher arquivo" e busque a Edição baixada<br>
             3 - clique em: "Pesquisar"<br>
             4 - Aguarde...<br>
         </label>
     </div>
-    <div class="footer">
-        @ 2023 Desenvolvido por Elinardo
+
+    <!-- <div class="footer">
+        @ 2023 Emef Maria Aparecida do Nascimento
     </div>
+
+     Adicione a div do popup aqui -->
+    <div class="overlay" id="overlay">
+        <div class="popup">
+
+
+            <h2>Politica de privacidade</h2> <br>
+            <p>A Lei Geral de Proteção de Dados (LGPD). Saiba mais <a
+                    href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+                    target="_blank">aqui</a>.</p>
+            <!-- Adicione a barra de cookies aqui -->
+            <div>
+                Este site utiliza cookies. Ao continuar a navegar no site, você concorda com o uso de cookies. <a
+                    href="https://www.aboutcookies.org/" target="_blank">aboutcookies.org</a><br><br>
+                <button class="cookie-btn" onclick="closePopup()">ACEITAR TUDO</button>
+            </div>
+        </div>
 
     </div>
     <script src="pdf.js"></script>
     <script src="script.js"></script>
+
+    <!-- Adicione os scripts para abrir e fechar o popup -->
+    <script>
+        function openPopup() {
+            document.getElementById("overlay").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
