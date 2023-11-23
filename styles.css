@@ -50,7 +50,7 @@ button {
     margin: 10px 0;
     border: 1px solid #2980b9;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
     background-color: #3498db;
     cursor: pointer;
@@ -70,6 +70,8 @@ button:hover {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+
 
 /* Estilos para resultados */
 #results {
@@ -128,13 +130,17 @@ button:hover {
     }
 
     button {
-        font-size: 14px;
-        width: auto;
+        font-size: 18px;
+        width: 100%;
         /* Define a largura automática para dispositivos móveis */
     }
 
     #results {
         padding: 10px;
+    }
+
+    #meuBotao {
+        text-align: center;
     }
 }
 
