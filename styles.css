@@ -41,6 +41,38 @@ nav a {
     font-size: 18px;
 }
 
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    /* Aumentei o espaçamento na parte inferior */
+}
+
+label {
+    flex: 0;
+    /* Ocupa o espaço disponível entre os elementos */
+
+    /* Adiciona um espaço à direita do label */
+}
+
+input {
+    flex: 2;
+    /* Ocupa mais espaço que o label */
+    margin-right: 10px;
+    /* Adiciona um espaço à direita do input */
+}
+
+button {
+    flex: 1;
+    /* Ocupa o mesmo espaço que o label */
+}
+
+/* Restante do seu CSS permanece o mesmo */
+
+
 /* Estilos para botões e campos de arquivo */
 input[type="file"],
 button {
@@ -51,15 +83,21 @@ button {
     border: 1px solid #2980b9;
     border-radius: 5px;
     font-size: 18px;
-    color: #fff;
-    background-color: #3498db;
+    color: #353333;
+
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 input[type="file"]:hover,
 button:hover {
-    background-color: #2980b9;
+    background-color: #0480d3;
+}
+
+
+#meuBotao {
+    background-color: #0480d3;
+    color: #f1f1f1;
 }
 
 /* Estilos do contêiner principal */
