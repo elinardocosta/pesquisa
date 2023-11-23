@@ -29,13 +29,17 @@
 
     <div class="container"><br>
         <h1>Emef Maria Aparecida do Nascimento</h1><br>
-        <label for="fileInput"><span style='font-size: 18px;'>Selecionar o Arquivo PDF da Edição
-                baixado</span></label>
-        <input type="file" id="fileInput" accept=".pdf"><br><br>
-        <!-- Botão com ícone estilizado -->
-        <button id="meuBotao" onclick="searchCodes(); ocultarLabel();">
-            🔍 Pesquisar
-        </button><br>
+
+        <span style='font-size: 18px;'>Selecionar o Arquivo PDF baixado</span>
+
+        <div class="button-container">
+
+            <label for="fileInput"> </label>
+            <input type="file" id="fileInput" accept=".pdf"><br>
+            <!-- Botão com ícone estilizado -->
+            <button id="meuBotao" onclick="searchCodes(); ocultarLabel();">🔍 Pesquisar</button>
+        </div>
+
 
         <div id="resultsDiv"></div><br>
 
