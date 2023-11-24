@@ -156,10 +156,11 @@ button:hover {
 }
 
 /* Estilos para dispositivos móveis */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-        margin: 10px;
+
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 500px) {
+    body {
+        font-size: 14px;
     }
 
     header,
@@ -167,10 +168,21 @@ button:hover {
         padding: 10px;
     }
 
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     button {
-        font-size: 18px;
         width: 100%;
-        /* Define a largura automática para dispositivos móveis */
+        margin-top: 10px;
+        /* Adiciona espaçamento acima do botão */
     }
 
     #results {
@@ -178,6 +190,7 @@ button:hover {
     }
 
 }
+
 
 /* Estilos para o pop-up no canto direito -->*/
 
