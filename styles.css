@@ -99,6 +99,10 @@ button:hover {
     background-color: #0480d3;
     color: #f1f1f1;
 }
+#loading {
+    font-size: 24px;
+    text-align: center;
+}
 
 /* Estilos do contêiner principal */
 .container {
