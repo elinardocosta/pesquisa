@@ -54,8 +54,6 @@ nav a {
 label {
     flex: 0;
     /* Ocupa o espaço disponível entre os elementos */
-
-    /* Adiciona um espaço à direita do label */
 }
 
 input {
@@ -69,9 +67,6 @@ button {
     flex: 1;
     /* Ocupa o mesmo espaço que o label */
 }
-
-/* Restante do seu CSS permanece o mesmo */
-
 
 /* Estilos para botões e campos de arquivo */
 input[type="file"],
@@ -99,6 +94,7 @@ button:hover {
     background-color: #0480d3;
     color: #f1f1f1;
 }
+
 #loading {
     font-size: 24px;
     text-align: center;
@@ -145,6 +141,7 @@ button:hover {
     background-color: #ffffff;
     color: #0480d3;
     font-weight: bold;
+    text-align: left;
 }
 
 .page {
