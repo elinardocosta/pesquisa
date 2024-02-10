@@ -7,21 +7,31 @@
 
 /* Estilos básicos do corpo do documento */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color: #262626;
+    color: #e0e0e0;
+    /* Alterado o texto para um cinza mais claro */
     margin: 0;
 }
 
-h1 {
+h2 {
     text-align: center;
+    color: #e0e0e0;
+    /* Alterado o texto para um cinza mais claro */
+}
+
+h3 {
+    text-align: center;
+    color: #e0e0e0;
+    /* Alterado o texto para um cinza mais claro */
 }
 
 /* Estilos do cabeçalho e da navegação */
 header,
 nav {
     font-weight: bold;
-    background-color: #3498db;
+    background-color: #202e3c;
+
     color: #fff;
     text-align: center;
     padding: 15px;
@@ -29,12 +39,14 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Adicionado uma sombra mais suave */
 }
 
 /* Estilos para links de navegação */
 nav a {
     font-weight: bold;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     color: #fff;
     margin: 10px;
@@ -47,25 +59,19 @@ nav a {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-
-    /* Aumentei o espaçamento na parte inferior */
 }
 
 label {
     flex: 0;
-    /* Ocupa o espaço disponível entre os elementos */
 }
 
 input {
     flex: 2;
-    /* Ocupa mais espaço que o label */
     margin-right: 10px;
-    /* Adiciona um espaço à direita do input */
 }
 
 button {
     flex: 1;
-    /* Ocupa o mesmo espaço que o label */
 }
 
 /* Estilos para botões e campos de arquivo */
@@ -75,24 +81,23 @@ button {
     width: 100%;
     padding: 10px;
     margin: 2px;
-    border: 1px solid #2980b9;
+    border: 1px solid #3498db;
     border-radius: 5px;
     font-size: 18px;
-    color: #353333;
-
+    color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    background-color: #2980b9;
 }
 
 input[type="file"]:hover,
 button:hover {
-    background-color: #0480d3;
+    background-color: #2c3e50;
 }
 
-
 #meuBotao {
-    background-color: #0480d3;
-    color: #f1f1f1;
+    background-color: #2980b9;
+    color: #fff;
 }
 
 #loading {
@@ -105,20 +110,20 @@ button:hover {
     max-width: 850px;
     margin: 20px auto 20px;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #2c3e50;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Ajustado o tamanho e a opacidade da sombra */
 }
-
-
 
 /* Estilos para resultados */
 #results {
     margin-top: 30px;
-    border: 1px solid #ccc;
+    border: 1px solid #444;
     padding: 15px;
     border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #34495e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Adicionado uma sombra mais suave */
 }
 
 /* Estilos para a tabela dentro da div de resultados */
@@ -138,25 +143,23 @@ button:hover {
 
 /* Estilos para o cabeçalho (th) da tabela dentro da div de resultados */
 #resultsDiv th {
-    background-color: #ffffff;
-    color: #0480d3;
+    background-color: #2c3e50;
+    color: #fff;
     font-weight: bold;
     text-align: left;
 }
 
 .page {
-    color: #0480d3;
+    color: #2980b9;
     text-decoration: none;
     cursor: default;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 
 .page:not(:last-child) {
     margin-right: 5px;
 }
-
-/* Estilos para dispositivos móveis */
 
 /* Estilos para dispositivos móveis */
 @media only screen and (max-width: 500px) {
@@ -183,15 +186,12 @@ button:hover {
     button {
         width: 100%;
         margin-top: 10px;
-        /* Adiciona espaçamento acima do botão */
     }
 
     #results {
         padding: 10px;
     }
-
 }
-
 
 /* Estilos para o pop-up no canto direito -->*/
 
@@ -202,25 +202,26 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     align-items: center;
     justify-content: center;
     z-index: 1000;
 }
 
 .popup {
-    background-color: #f1f1f1;
-    color: #353333;
+    background-color: #2c3e50;
+    color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+    /* Adicionado uma sombra mais suave */
     max-width: 600px;
     width: 100%;
     text-align: center;
 }
 
 .popup h2 {
-    color: #201f1f;
+    color: #fff;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -242,9 +243,7 @@ button:hover {
 .close-btn {
     cursor: pointer;
     background-color: #48f;
-    /* Cor de fundo azul */
     color: #fff;
-    /* Cor do texto branco */
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
@@ -254,10 +253,8 @@ button:hover {
 
 .cookie-btn {
     cursor: pointer;
-    background-color: #0480d3;
-    /* Cor de fundo azul */
+    background-color: #2980b9;
     color: #fff;
-    /* Cor do texto branco */
     padding: 8px 8px;
     border: none;
     border-radius: 5px;
@@ -266,8 +263,6 @@ button:hover {
 }
 
 .cookie-btn:hover {
-    background-color: #353333;
-    /* Cor de fundo azul mais escura durante o hover */
+    background-color: #2c3e50;
     color: #fff;
-    /* Cor do texto branco durante o hover */
 }
