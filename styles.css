@@ -7,11 +7,16 @@
 
 /* Estilos básicos do corpo do documento */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #262626;
+    font-family: 'Source Code Pro', sans-serif;
+    background-image: url("fundo.jpg");
+    background-size: cover;
+    /* Cobrir toda a área */
+    background-repeat: no-repeat;
+    background-position: center;
     color: #e0e0e0;
-    /* Alterado o texto para um cinza mais claro */
     margin: 0;
+    height: 100vh;
+    /* Definir altura para 100% da viewport */
 }
 
 h2 {
@@ -30,8 +35,8 @@ h3 {
 header,
 nav {
     font-weight: bold;
-    background-color: #202e3c;
-
+    /*background-color: #243444;*/
+    font-family: 'OCR-B 10 BT', sans-serif;
     color: #fff;
     text-align: center;
     padding: 15px;
@@ -39,16 +44,15 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Adicionado uma sombra mais suave */
+    /*box-shadow: 0 4px 6px rgba(140, 249, 231, 0.2);
+     Adicionado uma sombra mais suave */
 }
 
 /* Estilos para links de navegação */
 nav a {
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
     margin: 10px;
     font-size: 18px;
 }
@@ -77,6 +81,7 @@ button {
 /* Estilos para botões e campos de arquivo */
 input[type="file"],
 button {
+    font-family: 'Source Code Pro', sans-serif;
     font-weight: bold;
     width: 100%;
     padding: 10px;
@@ -88,41 +93,49 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     background-color: #2980b9;
+    background-color: rgba(44, 62, 80, 0.7);
 }
 
 input[type="file"]:hover,
 button:hover {
     background-color: #2c3e50;
+    color: #d7efff;
 }
 
 #meuBotao {
-    background-color: #2980b9;
-    color: #fff;
+    background-color: rgba(44, 62, 80, 0.7);
+    color: #eff0f5;
 }
 
 #loading {
     font-size: 24px;
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* Estilos do contêiner principal */
 .container {
+    font-family: 'Courier New', Courier, monospace;
     max-width: 850px;
     margin: 20px auto 20px;
     padding: 20px;
-    background-color: #2c3e50;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(44, 62, 80, 0.7);
+    /* Cor com transparência */
+    box-shadow: 0 4px 6px rgba(142, 247, 230, 0.3);
     /* Ajustado o tamanho e a opacidade da sombra */
 }
 
+
 /* Estilos para resultados */
 #results {
+    font-family: 'Courier New', Courier, monospace;
     margin-top: 30px;
     border: 1px solid #444;
     padding: 15px;
     border-radius: 5px;
-    background-color: #34495e;
+    background-color: #84dfc2;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(73, 80, 44, 0.5);
     /* Adicionado uma sombra mais suave */
 }
 
@@ -131,6 +144,10 @@ button:hover {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 10px;
+
+    background-color: rgba(44, 62, 80, 0.7);
+    /* Cor com transparência */
+    box-shadow: 0 4px 6px rgba(142, 247, 230, 0.2);
 }
 
 /* Estilos para as células (th, td) da tabela dentro da div de resultados */
@@ -139,6 +156,7 @@ button:hover {
     padding: 8px;
     border-bottom: 1px solid #2980b9;
     line-height: 1.2;
+    background-color: rgba(15, 84, 124, 0.3);
 }
 
 /* Estilos para o cabeçalho (th) da tabela dentro da div de resultados */
@@ -147,6 +165,7 @@ button:hover {
     color: #fff;
     font-weight: bold;
     text-align: left;
+    background-color: rgba(15, 84, 124, 0.3);
 }
 
 .page {
@@ -170,6 +189,10 @@ button:hover {
     header,
     nav {
         padding: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
     }
 
     .container {
@@ -213,7 +236,9 @@ button:hover {
     color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+    background-color: rgba(44, 62, 80, 0.7);
+    /* Cor com transparência */
+    box-shadow: 0 0 4px 6px rgba(142, 247, 230, 0);
     /* Adicionado uma sombra mais suave */
     max-width: 600px;
     width: 100%;
@@ -263,6 +288,6 @@ button:hover {
 }
 
 .cookie-btn:hover {
-    background-color: #2c3e50;
+    background-color: #354b61;
     color: #fff;
 }
