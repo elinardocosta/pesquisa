@@ -19,21 +19,20 @@
 
 </head>
 
-<body>
-    <!-- Menu -->
-    <nav>
-        <!-- <a href="#">Página Inicial</a>
-        Link para o Diário Oficial do Município de São Paulo com target="_blank"
-        <a href="https://diariooficial.prefeitura.sp.gov.br/md_epubli_controlador.php?acao=inicio" target="_blank">Link
-            para o Diário Oficial do Município de São Paulo</a> -->
-    </nav>
+<nav>
+    <a href="#">Home</a>     
+    <a href="#" button onclick="printResults()">Imprimir</a>
+</nav>
 
+
+
+<body>
     <br>
     <!-- ... (restante do conteúdo da página) ... -->
 
     <div class="container"><br>
-        <h2>- Cidinha -</h2>
-        <h3>Busca no Diario Oficial do municipio </h3><br>
+        <h1>Emef Maria Aparecida do Nascimento</h1><br>
+
         <span style='font-size: 18px;'>Selecionar o Arquivo PDF baixado</span>
 
         <div class="button-container">
@@ -44,10 +43,11 @@
             <button id="meuBotao" onclick="searchCodes(); ocultarLabel();">🔍 Pesquisar</button>
         </div>
 
-        <br>
-        <div id="resultsDiv"></div><br>
+            
 
-        <div id="loading" style="display: none; text-align: center; font-size: 24px;">
+        <div id="resultsDiv"> </div><br>
+
+        <div id="loading" style="display: none;">
             Aguarde...
             <div class="loader"></div>
         </div>
@@ -66,6 +66,7 @@
      Adicione a div do popup aqui -->
     <div class="overlay" id="overlay">
         <div class="popup">
+
 
             <h2>Politica de privacidade</h2> <br>
             <p>A Lei Geral de Proteção de Dados (LGPD). Saiba mais <a
